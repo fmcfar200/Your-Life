@@ -18,6 +18,24 @@ public class CameraScript : MonoBehaviour {
         }
 
 	}
+
+    void Update()
+    {
+        
+        foreach( Touch touch in Input.touches)
+        {
+            if (touch.phase == TouchPhase.Began)
+            {
+                Ray ray = Camera.main.ScreenPointToRay(touch.position);
+                RaycastHit hit;
+                if (Physics.Raycast(ray, out hit, 100.0f))
+                {
+
+                }
+            }
+        }
+        
+    }
 	
 	void FixedUpdate()
     {
@@ -33,18 +51,14 @@ public class CameraScript : MonoBehaviour {
         else if (orbitRight)
         {
             transform.RotateAround(target.transform.position, -Vector3.up, Time.deltaTime * 20.0f);
-
         }
-
         else if (orbitUp)
         {
             transform.RotateAround(target.transform.position, Vector3.right, Time.deltaTime * 20.0f);
-
         }
         else if (orbitDown)
         {
             transform.RotateAround(target.transform.position, Vector3.left, Time.deltaTime * 20.0f);
-
         }
     }
 
