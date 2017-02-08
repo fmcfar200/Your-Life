@@ -9,6 +9,12 @@ public class CameraScript : MonoBehaviour {
     public bool orbitUp = false;
     public bool orbitDown = false;
 
+    //input variables
+    float startTime;
+    Vector2 startPos;
+    bool couldSwipe;
+    float maxSwipeTime = 2.0f;
+
 	void Start()
     {
         target = GameObject.FindGameObjectWithTag("Player");
@@ -22,20 +28,64 @@ public class CameraScript : MonoBehaviour {
     void Update()
     {
         
-        foreach( Touch touch in Input.touches)
+       if (Input.touchCount > 0)
         {
-            if (touch.phase == TouchPhase.Began)
-            {
-                Ray ray = Camera.main.ScreenPointToRay(touch.position);
-                RaycastHit hit;
-                if (Physics.Raycast(ray, out hit, 100.0f))
-                {
+            Touch touch = Input.touches[0];
 
-                }
+            switch (touch.phase)
+            {
+                case TouchPhase.Began:
+                    couldSwipe = true;
+                    startPos = touch.position;
+                    startTime = Time.time;
+                    break;
+
+                case TouchPhase.Moved:
+                    couldSwipe = true;
+                    break;
+
+                case TouchPhase.Stationary:
+                    couldSwipe = false;
+                    break;
+                case TouchPhase.Ended:
+                    float swipeTime = Time.time - startTime;
+                    float swipeDistance = (touch.position - startPos).magnitude;
+
+                    if (couldSwipe)
+                    {
+                        float swipeDirectionX = Mathf.Sign(touch.position.x - startPos.x);
+                        float swipeDirectionY = Mathf.Sign(touch.position.y - startPos.y);
+
+                        if (swipeDirectionX == -1)
+                        {
+                            orbitLeft = true;
+                            StartCoroutine(DisableOrbit(1.5f));
+                        }
+                        else if (swipeDirectionX == 1)
+                        {
+                            orbitRight = true;
+                            StartCoroutine(DisableOrbit(1.5f));
+                        }
+                        else if (swipeDirectionY == -1)
+                        {
+                            orbitDown = true;
+                            StartCoroutine(DisableOrbit(1.5f));
+                        }
+                        else if (swipeDirectionY == 1)
+                        {
+                            orbitUp = true;
+                            StartCoroutine(DisableOrbit(1.5f));
+                        }
+
+                    }
+                    break;
+
+
             }
         }
         
     }
+
 	
 	void FixedUpdate()
     {
@@ -82,8 +132,9 @@ public class CameraScript : MonoBehaviour {
         }
     }
 
-    public void DisableOrbit()
+    IEnumerator DisableOrbit(float time)
     {
+        yield return new WaitForSeconds(time);
         orbitLeft = false;
         orbitRight = false;
         orbitUp = false;
