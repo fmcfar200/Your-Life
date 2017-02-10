@@ -26,7 +26,7 @@ public class TimeCycleScript : MonoBehaviour {
     {
         lightComp = lightObj.GetComponent<Light>(); // gets the light component
         currentDay = 0;
-        hour = 00;
+        hour = 9;
     }
 
     void Update()
