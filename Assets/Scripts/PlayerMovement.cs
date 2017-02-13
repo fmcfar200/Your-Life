@@ -73,21 +73,23 @@ public class PlayerMovement : MonoBehaviour {
             }
         }
 
-        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Stationary)
-        {
-            Ray ray = Camera.main.ScreenPointToRay(Input.GetTouch(0).position);
-            RaycastHit hit;
-            if (Physics.Raycast(ray, out hit, 100.0f))
+        //checks if the input pointer is over a GO instead of a UI object
+        
+            if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Stationary)
             {
-                if (hit.collider.tag == "Ground" && canMove)
+                Ray ray = Camera.main.ScreenPointToRay(Input.GetTouch(0).position);
+                RaycastHit hit;
+                if (Physics.Raycast(ray, out hit, 100.0f))
                 {
-                    hitPoint = hit.point;
-                    moving = true;
+                    if (hit.collider.tag == "Ground" && canMove)
+                    {
+                        hitPoint = hit.point;
+                        moving = true;
+                    }
                 }
             }
-        }
-        
 
+        
         if (moving)
         {
             MoveToPoint(hitPoint);
