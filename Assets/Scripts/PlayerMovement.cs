@@ -86,6 +86,11 @@ public class PlayerMovement : MonoBehaviour {
                         hitPoint = hit.point;
                         moving = true;
                     }
+
+                    if (hit.collider.tag == "Mission Item")
+                    {
+                        hit.collider.GetComponent<ItemScript>().ClickedOnObject();
+                    }
                 }
             }
 

@@ -6,7 +6,8 @@ public class PlayerInformationScript : MonoBehaviour {
 
     [Header("Player Stats")]
     public string playerName;
-    public string job;
+    public string[] jobs = {"Unemployed","Paperboy","Delivery","Plumber"};
+    public int currentJob;
     public int cash;
 
     [Header("UI Objects")]
@@ -19,14 +20,14 @@ public class PlayerInformationScript : MonoBehaviour {
     {
         //TEMP
         playerName = "Scott";
-        job = "Unemployed";
+        currentJob = 0;
         cash = 50;
     }
 
     void Update()
     {
         nameText.text = playerName;
-        jobText.text = job;
+        jobText.text = jobs[currentJob];
         cashText.text = "£" + cash.ToString();
     }
 }
