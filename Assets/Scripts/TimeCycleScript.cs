@@ -4,9 +4,13 @@ using UnityEngine.UI;
 
 public class TimeCycleScript : MonoBehaviour {
 
-    float nextHour = 20.0f; //Timer until next hour
-    int hour; // current hour
-    int currentDay; // current day array index
+    float maxHourRate = 20.0f;
+    float speedUp;
+    float nextHour; //Timer until next hour
+    bool speedActive;
+
+    public int hour; // current hour
+    public int currentDay; // current day array index
 
     string[] days =
     {
@@ -27,10 +31,16 @@ public class TimeCycleScript : MonoBehaviour {
         lightComp = lightObj.GetComponent<Light>(); // gets the light component
         currentDay = 0;
         hour = 9;
+        speedUp = 1;
+        nextHour = maxHourRate * speedUp;
+        speedActive = false;
+
+
     }
 
     void Update()
     {
+        nextHour = nextHour * speedUp;
         //increases the hour after timer reaches 0
         if (nextHour > 0)
         {
@@ -38,7 +48,7 @@ public class TimeCycleScript : MonoBehaviour {
         }
         else
         {
-            nextHour = 20.0f;
+            nextHour = 20.0f*speedUp;
             hour += 1;
         }
 
@@ -61,11 +71,13 @@ public class TimeCycleScript : MonoBehaviour {
         if (hour >= 0 && hour < 12)
         {
             hourText.text = hour.ToString() + ":00am";
+
         }
         else
         {
             hourText.text = hour.ToString() + ":00pm";
         }
+
 
 
         //changes lught intensity based on time of day
@@ -76,6 +88,30 @@ public class TimeCycleScript : MonoBehaviour {
         else
         {
             lightComp.intensity = 0;
+        }
+
+        if (speedActive)
+        {
+            speedUp = 0.75f;
+            hourText.text = hourText.text + "    >>";
+        }
+        else
+        {
+            speedUp = 1;
+        }
+
+    }
+
+    public void SpeedButton()
+    {
+
+        if (speedActive)
+        {
+            speedActive = false;
+        }
+        else
+        {
+            speedActive = true;
         }
     }
 

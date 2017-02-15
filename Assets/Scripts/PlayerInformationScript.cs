@@ -8,6 +8,7 @@ public class PlayerInformationScript : MonoBehaviour {
     public string playerName;
     public string[] jobs = {"Unemployed","Paperboy","Delivery","Plumber"};
     public int currentJob;
+    public int startHour = 9;
     public int cash;
 
     [Header("UI Objects")]
