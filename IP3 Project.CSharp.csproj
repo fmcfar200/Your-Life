@@ -66,9 +66,9 @@
     <Compile Include="Assets\ItemScript.cs" />
     <Compile Include="Assets\MenuManagerScript.cs" />
     <Compile Include="Assets\MissionManagerScript.cs" />
-    <Compile Include="Assets\Scripts\CameraScript.cs" />
-    <Compile Include="Assets\Scripts\PlayerInformationScript.cs" />
-    <Compile Include="Assets\Scripts\PlayerMovement.cs" />
+    <Compile Include="Assets\Scripts\Camera\CameraScript.cs" />
+    <Compile Include="Assets\Scripts\Player\PlayerInformationScript.cs" />
+    <Compile Include="Assets\Scripts\Player\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\TimeCycleScript.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />

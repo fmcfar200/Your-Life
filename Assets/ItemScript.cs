@@ -38,7 +38,6 @@ public class ItemScript : MonoBehaviour {
     {
         if (clicked == true)
         {
-            this.GetComponent<BoxCollider>().enabled = false;
             if (this.gameObject.tag == "Mission Item")
             {
                
@@ -65,13 +64,11 @@ public class ItemScript : MonoBehaviour {
         {
             quickPrompt.SetActive(true);
             Time.timeScale = 0;
-            
         }
         else
         {
             Time.timeScale = 1;
             quickPrompt.SetActive(false);
-
         }
     }
 
@@ -90,6 +87,7 @@ public class ItemScript : MonoBehaviour {
             missionManager = manager.GetComponent<MissionManagerScript>();
             if (gameObject.name == "Newspaper_Item")
             {
+                this.GetComponent<BoxCollider>().enabled = false;
                 missionManager.GetNewJob();
 
                 promptOpen = false;
@@ -97,6 +95,7 @@ public class ItemScript : MonoBehaviour {
                 promptDesc.text = null;
                 promptTitle.text = null;
 
+                missionManager.currentMission++;
             }
         }
     }

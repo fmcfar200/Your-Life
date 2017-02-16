@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class MissionManagerScript : MonoBehaviour {
 
     //Mission vars
-    int currentMission = 0;
+    public int currentMission = 0;
     public List<string> missionNames = new List<string>();
     public List<string> missionDescriptions = new List<string>();
     string missionName;
@@ -28,7 +28,9 @@ public class MissionManagerScript : MonoBehaviour {
 
     //UI
     public GameObject workButton;
-
+    public Text missionNameTextQuick;
+    public Text missionNameText;
+    public Text missionDescText;
 
 
     void Start()
@@ -69,6 +71,11 @@ public class MissionManagerScript : MonoBehaviour {
         missionName = missionNames[currentMission];
         missionDesc = missionDescriptions[currentMission];
         job = playerInfo.jobs[playerInfo.currentJob];
+
+        //updates mission UI
+        missionNameText.text = missionName;
+        missionNameTextQuick.text = missionName;
+        missionDescText.text = missionDesc;
 
         if (job != "Unemployed")
         {

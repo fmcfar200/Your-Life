@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
+using UnityEngine.EventSystems;
 using System.Collections;
-using System;
+using System.Collections.Generic;
 
 public class PlayerMovement : MonoBehaviour {
 
@@ -25,22 +26,23 @@ public class PlayerMovement : MonoBehaviour {
 
 	void Update()
     {
-
-        
-        if (Input.GetMouseButtonDown(0))
+        if (!UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject())
         {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
-            if (Physics.Raycast(ray, out hit, 100.0f))
+            if (Input.GetMouseButtonDown(0))
             {
-                if (hit.collider.tag == "Ground")
+                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+                RaycastHit hit;
+                if (Physics.Raycast(ray, out hit, 100.0f))
                 {
-                    hitPoint = hit.point;
-                    moving = true;
-                }
-                if (hit.collider.tag == "Mission Item")
-                {
-                    hit.collider.GetComponent<ItemScript>().ClickedOnObject();
+                    if (hit.collider.tag == "Ground")
+                    {
+                        hitPoint = hit.point;
+                        moving = true;
+                    }
+                    if (hit.collider.tag == "Mission Item")
+                    {
+                        hit.collider.GetComponent<ItemScript>().ClickedOnObject();
+                    }
                 }
             }
         }
@@ -85,15 +87,19 @@ public class PlayerMovement : MonoBehaviour {
                 RaycastHit hit;
                 if (Physics.Raycast(ray, out hit, 100.0f))
                 {
-                    if (hit.collider.tag == "Ground" && canMove)
+                        //FIX THIS.NOT WORKING
+                    if (EventSystem.current.IsPointerOverGameObject(Input.GetTouch(0).fingerId))
                     {
-                        hitPoint = hit.point;
-                        moving = true;
-                    }
+                        if (hit.collider.tag == "Ground" && canMove)
+                        {
+                            hitPoint = hit.point;
+                            moving = true;
+                        }
 
-                    if (hit.collider.tag == "Mission Item")
-                    {
-                        hit.collider.GetComponent<ItemScript>().ClickedOnObject();
+                        if (hit.collider.tag == "Mission Item")
+                        {
+                            hit.collider.GetComponent<ItemScript>().ClickedOnObject();
+                        }
                     }
                 }
             }
@@ -110,4 +116,9 @@ public class PlayerMovement : MonoBehaviour {
         hitPoint.y = 0;
         player.transform.position = Vector3.MoveTowards(player.transform.position,hitPoint,speed*Time.deltaTime);
     }
+
+
+   
+
+    
 }
