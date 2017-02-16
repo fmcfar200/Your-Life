@@ -68,7 +68,7 @@ public class MissionManagerScript : MonoBehaviour {
         //updates current mission
         missionName = missionNames[currentMission];
         missionDesc = missionDescriptions[currentMission];
-
+        job = playerInfo.jobs[playerInfo.currentJob];
 
         if (job != "Unemployed")
         {
@@ -81,7 +81,6 @@ public class MissionManagerScript : MonoBehaviour {
                 else
                 {
                     workButton.SetActive(false);
-
                 }
 
             }

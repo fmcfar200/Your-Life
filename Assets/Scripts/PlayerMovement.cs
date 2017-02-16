@@ -26,7 +26,7 @@ public class PlayerMovement : MonoBehaviour {
 	void Update()
     {
 
-        /*
+        
         if (Input.GetMouseButtonDown(0))
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -38,10 +38,14 @@ public class PlayerMovement : MonoBehaviour {
                     hitPoint = hit.point;
                     moving = true;
                 }
+                if (hit.collider.tag == "Mission Item")
+                {
+                    hit.collider.GetComponent<ItemScript>().ClickedOnObject();
+                }
             }
         }
 
-    */
+    
 
         if (Input.touchCount > 0)
         {
