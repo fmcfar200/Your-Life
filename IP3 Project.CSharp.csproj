@@ -63,10 +63,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\ItemScript.cs" />
-    <Compile Include="Assets\MenuManagerScript.cs" />
-    <Compile Include="Assets\MissionManagerScript.cs" />
+    <Compile Include="Assets\PaperObjectScript.cs" />
+    <Compile Include="Assets\PaperboyPlayerScript.cs" />
+    <Compile Include="Assets\SceneManager.cs" />
     <Compile Include="Assets\Scripts\Camera\CameraScript.cs" />
+    <Compile Include="Assets\Scripts\ItemScript.cs" />
+    <Compile Include="Assets\Scripts\MenuManagerScript.cs" />
+    <Compile Include="Assets\Scripts\MissionManagerScript.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerInformationScript.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\TimeCycleScript.cs" />

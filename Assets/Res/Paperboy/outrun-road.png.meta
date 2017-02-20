@@ -1,12 +1,9 @@
 fileFormatVersion: 2
-guid: d8ab0f35896d62245a956e0d84ab01c1
-timeCreated: 1486402720
+guid: 858c062196f98f0499fe28a2f588da5d
+timeCreated: 1487612178
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName:
-    21300000: Dpad_3
-    21300002: Dpad_4
-    21300004: Dpad_6
+  fileIDToRecycleName: {}
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -41,7 +38,7 @@ TextureImporter:
   rGBM: 0
   compressionQuality: 50
   allowsAlphaSplitting: 0
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -59,46 +56,7 @@ TextureImporter:
     allowsAlphaSplitting: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: Dpad_3
-      rect:
-        serializedVersion: 2
-        x: 8
-        y: 107
-        width: 88
-        height: 88
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Dpad_4
-      rect:
-        serializedVersion: 2
-        x: 208
-        y: 107
-        width: 88
-        height: 88
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Dpad_6
-      rect:
-        serializedVersion: 2
-        x: 108
-        y: 7
-        width: 88
-        height: 88
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
+    sprites: []
     outline: []
   spritePackingTag: 
   userData: 

@@ -61,7 +61,7 @@ public class MissionManagerScript : MonoBehaviour {
         {
             Debug.LogError("Cant find time");
         }
-
+        workButton.GetComponent<Button>().onClick.AddListener(() => LoadWorkLevel());
 
     }
 
@@ -91,6 +91,10 @@ public class MissionManagerScript : MonoBehaviour {
                 }
 
             }
+
+            if (job == "Paperboy")
+            {
+            }
         }
         else
         {
@@ -98,6 +102,14 @@ public class MissionManagerScript : MonoBehaviour {
         }
 
         
+    }
+
+    void LoadWorkLevel()
+    {
+        if (job == "Paperboy")
+        {
+            Application.LoadLevel("PaperboyScene");
+        }
     }
 
     public void GetNewJob()
