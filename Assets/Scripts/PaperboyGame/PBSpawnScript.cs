@@ -37,7 +37,10 @@ public class PBSpawnScript : MonoBehaviour {
 
     void Update()
     {
-        
+        if (spawning == false)
+        {
+            Application.LoadLevel("HomeScene");
+        }
     }
 
     IEnumerator Spawn()
@@ -55,6 +58,12 @@ public class PBSpawnScript : MonoBehaviour {
                     yield return new WaitForSeconds(spawnDelay);
                 }
                 wave++;
+
+                yield return new WaitForSeconds(3.0f);
+            }
+            else
+            {
+                spawning = false;
             }
         }
     }
