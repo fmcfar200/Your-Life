@@ -20,9 +20,6 @@ public class MissionManagerScript : MonoBehaviour {
     TimeCycleScript timeScript;
     GameObject timeManager;
 
-    //job
-    string job;
-
     //objects
     public GameObject newspaper;
 
@@ -40,13 +37,6 @@ public class MissionManagerScript : MonoBehaviour {
         if (player !=null)
         {
             playerInfo = player.GetComponent<PlayerInformationScript>();
-            job = playerInfo.jobs[playerInfo.currentJob];
-
-            if (job == "Unemployed")
-            {
-                currentMission = 0;
-            }
-
         }
         else
         {
@@ -61,7 +51,6 @@ public class MissionManagerScript : MonoBehaviour {
         {
             Debug.LogError("Cant find time");
         }
-        workButton.GetComponent<Button>().onClick.AddListener(() => LoadWorkLevel());
 
     }
 
@@ -70,52 +59,22 @@ public class MissionManagerScript : MonoBehaviour {
         //updates current mission
         missionName = missionNames[currentMission];
         missionDesc = missionDescriptions[currentMission];
-        job = playerInfo.jobs[playerInfo.currentJob];
 
         //updates mission UI
         missionNameText.text = missionName;
         missionNameTextQuick.text = missionName;
         missionDescText.text = missionDesc;
-
-        if (job != "Unemployed")
-        {
-            if (timeScript.currentDay > 0 && timeScript.currentDay < 6 )
-            {
-                if (timeScript.hour >= 9 && timeScript.hour <= 12)
-                {
-                    workButton.SetActive(true);
-                }
-                else
-                {
-                    workButton.SetActive(false);
-                }
-
-            }
-
-            if (job == "Paperboy")
-            {
-            }
-        }
-        else
-        {
-            workButton.SetActive(false);
-        }
-
         
     }
 
-    void LoadWorkLevel()
+    public void LoadMinigameLevel(string gameName)
     {
-        if (job == "Paperboy")
+        if (gameName == "BikeRide")
         {
-            Application.LoadLevel("PaperboyScene");
+            Application.LoadLevel("BikeRide");
         }
     }
 
-    public void GetNewJob()
-    {
-        playerInfo.currentJob++;
-    }
 
     string GetMissionName()
     {

@@ -9,9 +9,9 @@ public class GameControllerScript : MonoBehaviour {
     public static GameControllerScript controller;
 
     //playerdata
-    string playerName;
-    string playerJob;
-    int playerCash;
+    public string playerName;
+    public int playerScore;
+    public float overallWellbeing;
 
     //time data
     int day;
@@ -52,8 +52,7 @@ public class GameControllerScript : MonoBehaviour {
             playerInfo = playerObj.GetComponent<PlayerInformationScript>();
 
             playerName = playerInfo.playerName;
-            playerJob = playerInfo.jobs[playerInfo.currentJob];
-            playerCash = playerInfo.cash;
+            playerScore = playerInfo.score;
         }
         else
         {
@@ -71,6 +70,10 @@ public class GameControllerScript : MonoBehaviour {
         {
             Debug.LogError(timeManagerObj.name + " not found!!");
         }
+
+        playerName = "Scott";
+        playerScore = 0;
+        overallWellbeing = 65.0f;
     }
 
     void Update()
@@ -82,8 +85,7 @@ public class GameControllerScript : MonoBehaviour {
     void UpdatePlayerData()
     {
         playerName = playerInfo.playerName;
-        playerJob = playerInfo.jobs[playerInfo.currentJob];
-        playerCash = playerInfo.cash;
+        playerScore = playerInfo.score;
     }
 
     void UpdateTimeData()
@@ -99,8 +101,8 @@ public class GameControllerScript : MonoBehaviour {
 
         PlayerData playerData = new PlayerData();
         playerData.name = playerName;
-        playerData.job = playerJob;
-        playerData.cash = playerCash;
+        playerData.score = playerScore;
+        playerData.overallWellbeing = overallWellbeing;
 
         bf.Serialize(file, playerData);
         file.Close();
@@ -116,10 +118,10 @@ public class GameControllerScript : MonoBehaviour {
             file.Close();
 
             playerName = playerData.name;
-            playerJob = playerData.job;
-            playerCash = playerData.cash;
+            playerScore = playerData.score;
+            overallWellbeing = playerData.overallWellbeing;
 
-            Debug.Log(playerName+" "+ playerJob+" " +playerCash.ToString());
+            Debug.Log(playerName+" " +playerScore.ToString() + " " + overallWellbeing.ToString("F1"));
 
         }
                 
@@ -130,7 +132,7 @@ public class GameControllerScript : MonoBehaviour {
     class PlayerData
     {
         public string name;
-        public string job;
-        public int cash;
+        public int score;
+        public float overallWellbeing;
     }
 }

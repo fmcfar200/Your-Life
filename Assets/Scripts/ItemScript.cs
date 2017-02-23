@@ -1,13 +1,13 @@
 ﻿using UnityEngine;
-using System.Collections;
 using UnityEngine.UI;
 
 public class ItemScript : MonoBehaviour {
 
     bool clicked;
     bool promptOpen;
+    GameObject clickedItem;
 
-    GameObject quickPrompt;
+    public GameObject quickPrompt;
     Text promptTitle;
     Text promptDesc;
     Button yesButton;
@@ -18,7 +18,6 @@ public class ItemScript : MonoBehaviour {
     {
         clicked = false;
         promptOpen = false;
-
         quickPrompt = GameObject.Find("Quick_Prompt");
         if (quickPrompt != null)
         {
@@ -38,28 +37,24 @@ public class ItemScript : MonoBehaviour {
     {
         if (clicked == true)
         {
-            if (this.gameObject.tag == "Mission Item")
+            if (gameObject.tag == "Mission Item")
             {
-               
-                    if (gameObject.name == "Newspaper_Item")
-                    {
-                        promptOpen = true;
-                        promptTitle.text = "Paper Boy/Girl Wanted!";
-                        promptDesc.text = "The local newspaper is looking for a new paper boy/girl. Would you like to apply?";
-
-                        yesButton.onClick.AddListener(()=>YesClick());
-                        noButton.onClick.AddListener(() => NoClick());
-                    }
-                }
-                else
+                 if (this.gameObject.name == "Bike")
                 {
-                    Debug.LogError("MANAGER NOT FOUND!");
+                    promptOpen = true;
+                    promptTitle.text = "Bike Ride!";
+                    promptDesc.text = "Playing this game will increase your Active and Health stats. Would you like to begin?";
+                    yesButton.onClick.AddListener(() => YesClick());
+                    noButton.onClick.AddListener(() => NoClick());
                 }
-                clicked = false;
-            
-
+            }
+            else
+            {
+                Debug.LogError("MANAGER NOT FOUND!");
+            }
+            clicked = false;
         }
-
+        
         if (promptOpen == true)
         {
             quickPrompt.SetActive(true);
@@ -70,6 +65,7 @@ public class ItemScript : MonoBehaviour {
             Time.timeScale = 1;
             quickPrompt.SetActive(false);
         }
+        
     }
 
     public void ClickedOnObject()
@@ -88,7 +84,6 @@ public class ItemScript : MonoBehaviour {
             if (gameObject.name == "Newspaper_Item")
             {
                 this.GetComponent<BoxCollider>().enabled = false;
-                missionManager.GetNewJob();
 
                 promptOpen = false;
                 quickPrompt.SetActive(false);
@@ -96,6 +91,17 @@ public class ItemScript : MonoBehaviour {
                 promptTitle.text = null;
 
                 missionManager.currentMission++;
+            }
+            if (gameObject.name == "Bike")
+            {
+
+                promptOpen = false;
+                quickPrompt.SetActive(false);
+                promptDesc.text = null;
+                promptTitle.text = null;
+
+                Application.LoadLevel("BikeRide");
+
             }
         }
     }

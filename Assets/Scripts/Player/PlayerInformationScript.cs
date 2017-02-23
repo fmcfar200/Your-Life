@@ -6,29 +6,38 @@ public class PlayerInformationScript : MonoBehaviour {
 
     [Header("Player Stats")]
     public string playerName;
-    public string[] jobs = {"Unemployed","Paperboy","Delivery","Plumber"};
-    public int currentJob;
-    public int startHour = 9;
-    public int cash;
+    public int score;
+    public float overallWellbeing;
 
     [Header("UI Objects")]
     public Text nameText;
-    public Text jobText;
-    public Text cashText;
-    
+    public Text scoreText;
+    public Text wellbeingText;
 
-    void Start()
+    GameObject controller;
+    GameControllerScript gameController;
+
+    void Awake()
     {
-        //TEMP
-        playerName = "Scott";
-        currentJob = 0;
-        cash = 50;
+        controller = GameObject.Find("GameController");
+        if (controller!=null)
+        {
+            gameController = controller.GetComponent<GameControllerScript>();
+            playerName = gameController.playerName;
+            score = gameController.playerScore;
+            overallWellbeing = gameController.overallWellbeing;
+
+        }
     }
 
     void Update()
     {
-        nameText.text = playerName;
-        jobText.text = jobs[currentJob];
-        cashText.text = "£" + cash.ToString();
+        playerName = gameController.playerName;
+        score = gameController.playerScore;
+        overallWellbeing = gameController.overallWellbeing;
+
+        nameText.text = gameController.playerName;
+        scoreText.text = "Score: " + gameController.playerScore.ToString();
+        wellbeingText.text = "Wellbeing: " + gameController.overallWellbeing.ToString("F1");
     }
 }

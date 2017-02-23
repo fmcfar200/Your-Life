@@ -82,57 +82,62 @@ public class PBSpawnScript : MonoBehaviour {
     {
         GameObject button = EventSystem.current.currentSelectedGameObject;
 
-        if (button.name == "UpButton")
+        if (arrow != null)
         {
-            if (arrow.name == "ArrowUp(Clone)")
+            if (button.name == "UpButton")
             {
-                Destroy(arrow);
-                Debug.Log("Correct");
+                if (arrow.name == "ArrowUp(Clone)")
+                {
+                    Destroy(arrow);
+                    Debug.Log("Correct");
 
+                }
+                else
+                {
+                    Debug.Log("Wrong");
+                }
             }
-            else
+            else if (button.name == "DownButton")
             {
-                Debug.Log("Wrong");
-            }
-        }
-        else if (button.name == "DownButton")
-        {
-            if (arrow.name == "ArrowDown(Clone)")
-            {
-                Destroy(arrow);
-                Debug.Log("Correct");
+                if (arrow.name == "ArrowDown(Clone)")
+                {
+                    Destroy(arrow);
+                    Debug.Log("Correct");
 
+                }
+                else
+                {
+                    Debug.Log("Wrong");
+                }
             }
-            else
+            else if (button.name == "LeftButton")
             {
-                Debug.Log("Wrong");
-            }
-        }
-        else if (button.name == "LeftButton")
-        {
-            if (arrow.name == "ArrowLeft(Clone)")
-            {
-                Destroy(arrow);
-                Debug.Log("Correct");
+                if (arrow.name == "ArrowLeft(Clone)")
+                {
+                    Destroy(arrow);
+                    Debug.Log("Correct");
 
+                }
+                else
+                {
+                    Debug.Log("Wrong");
+                }
             }
-            else
+            else if (button.name == "RightButton")
             {
-                Debug.Log("Wrong");
-            }
-        }
-        else if (button.name == "RightButton")
-        {
-            if (arrow.name == "ArrowRight(Clone)")
-            {
-                Destroy(arrow);
-                Debug.Log("Correct");
+                if (arrow.name == "ArrowRight(Clone)")
+                {
+                    Destroy(arrow);
+                    Debug.Log("Correct");
 
+                }
+                else
+                {
+                    Debug.Log("Wrong");
+                }
             }
-            else
-            {
-                Debug.Log("Wrong");
-            }
+
+
         }
     }
 
