@@ -20,5 +20,10 @@ public class PaperObjectScript : MonoBehaviour {
             transform.Translate(Vector2.right * Time.deltaTime * speed);
 
         }
+
+        if (transform.position.x >= 10 || transform.position.x <= -10)
+        {
+            Destroy(gameObject);
+        }
     }
 }

@@ -38,7 +38,22 @@ public class PaperboyPlayerScript : MonoBehaviour {
             }
         }
 
-      
+        else if (Input.GetMouseButtonDown(0))
+        {
+            if (Input.mousePosition.x > Screen.width / 2)
+            {
+                paperObj = Instantiate(paperPrefab, paperSpawn, Quaternion.identity) as GameObject;
+                paperObj.GetComponent<PaperObjectScript>().rightThrow = true;
+            }
+            else
+            {
+                //throw is to the left side
+                paperObj = Instantiate(paperPrefab, paperSpawn, Quaternion.identity) as GameObject;
+                paperObj.GetComponent<PaperObjectScript>().leftThrow = true;
+            }
+        }
+
+     
 
     }
 }
