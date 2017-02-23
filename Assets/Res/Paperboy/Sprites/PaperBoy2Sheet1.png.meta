@@ -1,0 +1,1772 @@
+fileFormatVersion: 2
+guid: de2ce6ecd6ab6cf46a4b41a2c8e44e52
+timeCreated: 1487611917
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: PaperBoy2Sheet1_0
+    21300002: PaperBoy2Sheet1_1
+    21300004: PaperBoy2Sheet1_2
+    21300006: PaperBoy2Sheet1_3
+    21300008: PaperBoy2Sheet1_4
+    21300010: PaperBoy2Sheet1_5
+    21300012: PaperBoy2Sheet1_6
+    21300014: PaperBoy2Sheet1_7
+    21300016: PaperBoy2Sheet1_8
+    21300018: PaperBoy2Sheet1_9
+    21300020: PaperBoy2Sheet1_10
+    21300022: PaperBoy2Sheet1_11
+    21300024: PaperBoy2Sheet1_12
+    21300026: PaperBoy2Sheet1_13
+    21300028: PaperBoy2Sheet1_14
+    21300030: PaperBoy2Sheet1_15
+    21300032: PaperBoy2Sheet1_16
+    21300034: PaperBoy2Sheet1_17
+    21300036: PaperBoy2Sheet1_18
+    21300038: PaperBoy2Sheet1_19
+    21300040: PaperBoy2Sheet1_20
+    21300042: PaperBoy2Sheet1_21
+    21300044: PaperBoy2Sheet1_22
+    21300046: PaperBoy2Sheet1_23
+    21300048: PaperBoy2Sheet1_24
+    21300050: PaperBoy2Sheet1_25
+    21300052: PaperBoy2Sheet1_26
+    21300054: PaperBoy2Sheet1_27
+    21300056: PaperBoy2Sheet1_28
+    21300058: PaperBoy2Sheet1_29
+    21300060: PaperBoy2Sheet1_30
+    21300062: PaperBoy2Sheet1_31
+    21300064: PaperBoy2Sheet1_32
+    21300066: PaperBoy2Sheet1_33
+    21300068: PaperBoy2Sheet1_34
+    21300070: PaperBoy2Sheet1_35
+    21300072: PaperBoy2Sheet1_36
+    21300074: PaperBoy2Sheet1_37
+    21300076: PaperBoy2Sheet1_38
+    21300078: PaperBoy2Sheet1_39
+    21300080: PaperBoy2Sheet1_40
+    21300082: PaperBoy2Sheet1_41
+    21300084: PaperBoy2Sheet1_42
+    21300086: PaperBoy2Sheet1_43
+    21300088: PaperBoy2Sheet1_44
+    21300090: PaperBoy2Sheet1_45
+    21300092: PaperBoy2Sheet1_46
+    21300094: PaperBoy2Sheet1_47
+    21300096: PaperBoy2Sheet1_48
+    21300098: PaperBoy2Sheet1_49
+    21300100: PaperBoy2Sheet1_50
+    21300102: PaperBoy2Sheet1_51
+    21300104: PaperBoy2Sheet1_52
+    21300106: PaperBoy2Sheet1_53
+    21300108: PaperBoy2Sheet1_54
+    21300110: PaperBoy2Sheet1_55
+    21300112: PaperBoy2Sheet1_56
+    21300114: PaperBoy2Sheet1_57
+    21300116: PaperBoy2Sheet1_58
+    21300118: PaperBoy2Sheet1_59
+    21300120: PaperBoy2Sheet1_60
+    21300122: PaperBoy2Sheet1_61
+    21300124: PaperBoy2Sheet1_62
+    21300126: PaperBoy2Sheet1_63
+    21300128: PaperBoy2Sheet1_64
+    21300130: PaperBoy2Sheet1_65
+    21300132: PaperBoy2Sheet1_66
+    21300134: PaperBoy2Sheet1_67
+    21300136: PaperBoy2Sheet1_68
+    21300138: PaperBoy2Sheet1_69
+    21300140: PaperBoy2Sheet1_70
+    21300142: PaperBoy2Sheet1_71
+    21300144: PaperBoy2Sheet1_72
+    21300146: PaperBoy2Sheet1_73
+    21300148: PaperBoy2Sheet1_74
+    21300150: PaperBoy2Sheet1_75
+    21300152: PaperBoy2Sheet1_76
+    21300154: PaperBoy2Sheet1_77
+    21300156: PaperBoy2Sheet1_78
+    21300158: PaperBoy2Sheet1_79
+    21300160: PaperBoy2Sheet1_80
+    21300162: PaperBoy2Sheet1_81
+    21300164: PaperBoy2Sheet1_82
+    21300166: PaperBoy2Sheet1_83
+    21300168: PaperBoy2Sheet1_84
+    21300170: PaperBoy2Sheet1_85
+    21300172: PaperBoy2Sheet1_86
+    21300174: PaperBoy2Sheet1_87
+    21300176: PaperBoy2Sheet1_88
+    21300178: PaperBoy2Sheet1_89
+    21300180: PaperBoy2Sheet1_90
+    21300182: PaperBoy2Sheet1_91
+    21300184: PaperBoy2Sheet1_92
+    21300186: PaperBoy2Sheet1_93
+    21300188: PaperBoy2Sheet1_94
+    21300190: PaperBoy2Sheet1_95
+    21300192: PaperBoy2Sheet1_96
+    21300194: PaperBoy2Sheet1_97
+    21300196: PaperBoy2Sheet1_98
+    21300198: PaperBoy2Sheet1_99
+    21300200: PaperBoy2Sheet1_100
+    21300202: PaperBoy2Sheet1_101
+    21300204: PaperBoy2Sheet1_102
+    21300206: PaperBoy2Sheet1_103
+    21300208: PaperBoy2Sheet1_104
+    21300210: PaperBoy2Sheet1_105
+    21300212: PaperBoy2Sheet1_106
+    21300214: PaperBoy2Sheet1_107
+    21300216: PaperBoy2Sheet1_108
+    21300218: PaperBoy2Sheet1_109
+    21300220: PaperBoy2Sheet1_110
+    21300222: PaperBoy2Sheet1_111
+    21300224: PaperBoy2Sheet1_112
+    21300226: PaperBoy2Sheet1_113
+    21300228: PaperBoy2Sheet1_114
+    21300230: PaperBoy2Sheet1_115
+    21300232: PaperBoy2Sheet1_116
+    21300234: PaperBoy2Sheet1_117
+    21300236: PaperBoy2Sheet1_118
+    21300238: PaperBoy2Sheet1_119
+    21300240: PaperBoy2Sheet1_120
+    21300242: PaperBoy2Sheet1_121
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  buildTargetSettings:
+  - buildTarget: Android
+    maxTextureSize: 2048
+    textureFormat: -1
+    compressionQuality: 50
+    allowsAlphaSplitting: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: PaperBoy2Sheet1_0
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 652
+        width: 18
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PaperBoy2Sheet1_1
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 652
+        width: 18
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PaperBoy2Sheet1_2
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 652
+        width: 17
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PaperBoy2Sheet1_3
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 652
+        width: 17
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PaperBoy2Sheet1_4
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 652
+        width: 17
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PaperBoy2Sheet1_5
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 652
+        width: 17
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PaperBoy2Sheet1_6
+      rect:
+        serializedVersion: 2
+        x: 190
+        y: 652
+        width: 18
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PaperBoy2Sheet1_7
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 652
+        width: 18
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PaperBoy2Sheet1_8
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 610
+        width: 24
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PaperBoy2Sheet1_9
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 610
+        width: 24
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PaperBoy2Sheet1_10
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 610
+        width: 24
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PaperBoy2Sheet1_11
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 610
+        width: 24
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PaperBoy2Sheet1_12
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 610
+        width: 24
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PaperBoy2Sheet1_13
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 610
+        width: 24
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PaperBoy2Sheet1_14
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 610
+        width: 24
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PaperBoy2Sheet1_15
+      rect:
+        serializedVersion: 2
+        x: 235
+        y: 610
+        width: 24
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PaperBoy2Sheet1_16
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 567
+        width: 19
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PaperBoy2Sheet1_17
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 567
+        width: 19
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PaperBoy2Sheet1_18
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 567
+        width: 19
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PaperBoy2Sheet1_19
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 567
+        width: 15
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PaperBoy2Sheet1_20
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 567
+        width: 15
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PaperBoy2Sheet1_21
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 567
+        width: 15
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PaperBoy2Sheet1_22
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 567
+        width: 19
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PaperBoy2Sheet1_23
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 567
+        width: 19
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PaperBoy2Sheet1_24
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 567
+        width: 19
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PaperBoy2Sheet1_25
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 524
+        width: 20
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PaperBoy2Sheet1_26
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 524
+        width: 21
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PaperBoy2Sheet1_27
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 524
+        width: 21
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PaperBoy2Sheet1_28
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 524
+        width: 20
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PaperBoy2Sheet1_29
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 524
+        width: 21
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PaperBoy2Sheet1_30
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 524
+        width: 21
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PaperBoy2Sheet1_31
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 524
+        width: 21
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PaperBoy2Sheet1_32
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 524
+        width: 21
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PaperBoy2Sheet1_33
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 482
+        width: 21
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PaperBoy2Sheet1_34
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 482
+        width: 21
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PaperBoy2Sheet1_35
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 482
+        width: 21
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PaperBoy2Sheet1_36
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 482
+        width: 21
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PaperBoy2Sheet1_37
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 482
+        width: 20
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PaperBoy2Sheet1_38
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 482
+        width: 21
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PaperBoy2Sheet1_39
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 482
+        width: 21
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PaperBoy2Sheet1_40
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 482
+        width: 20
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PaperBoy2Sheet1_41
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 438
+        width: 24
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PaperBoy2Sheet1_42
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 438
+        width: 24
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PaperBoy2Sheet1_43
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 438
+        width: 24
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PaperBoy2Sheet1_44
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 438
+        width: 24
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PaperBoy2Sheet1_45
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 438
+        width: 24
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PaperBoy2Sheet1_46
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 438
+        width: 24
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PaperBoy2Sheet1_47
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 438
+        width: 24
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PaperBoy2Sheet1_48
+      rect:
+        serializedVersion: 2
+        x: 243
+        y: 438
+        width: 24
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PaperBoy2Sheet1_49
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 395
+        width: 24
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PaperBoy2Sheet1_50
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 395
+        width: 24
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PaperBoy2Sheet1_51
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 395
+        width: 24
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PaperBoy2Sheet1_52
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 395
+        width: 24
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PaperBoy2Sheet1_53
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 395
+        width: 24
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PaperBoy2Sheet1_54
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 395
+        width: 24
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PaperBoy2Sheet1_55
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 395
+        width: 24
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PaperBoy2Sheet1_56
+      rect:
+        serializedVersion: 2
+        x: 246
+        y: 395
+        width: 24
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PaperBoy2Sheet1_57
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 354
+        width: 14
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PaperBoy2Sheet1_58
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 354
+        width: 29
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PaperBoy2Sheet1_59
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 354
+        width: 24
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PaperBoy2Sheet1_60
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 354
+        width: 14
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PaperBoy2Sheet1_61
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 307
+        width: 18
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PaperBoy2Sheet1_62
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 307
+        width: 18
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PaperBoy2Sheet1_63
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 307
+        width: 17
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PaperBoy2Sheet1_64
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 307
+        width: 17
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PaperBoy2Sheet1_65
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 307
+        width: 17
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PaperBoy2Sheet1_66
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 307
+        width: 17
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PaperBoy2Sheet1_67
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 307
+        width: 18
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PaperBoy2Sheet1_68
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 307
+        width: 18
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PaperBoy2Sheet1_69
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 265
+        width: 24
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PaperBoy2Sheet1_70
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 265
+        width: 24
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PaperBoy2Sheet1_71
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 265
+        width: 24
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PaperBoy2Sheet1_72
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 265
+        width: 24
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PaperBoy2Sheet1_73
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 265
+        width: 24
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PaperBoy2Sheet1_74
+      rect:
+        serializedVersion: 2
+        x: 171
+        y: 265
+        width: 24
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PaperBoy2Sheet1_75
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 265
+        width: 24
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PaperBoy2Sheet1_76
+      rect:
+        serializedVersion: 2
+        x: 235
+        y: 265
+        width: 24
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PaperBoy2Sheet1_77
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 223
+        width: 19
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PaperBoy2Sheet1_78
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 223
+        width: 19
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PaperBoy2Sheet1_79
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 223
+        width: 19
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PaperBoy2Sheet1_80
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 223
+        width: 15
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PaperBoy2Sheet1_81
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 223
+        width: 15
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PaperBoy2Sheet1_82
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 223
+        width: 15
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PaperBoy2Sheet1_83
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 223
+        width: 19
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PaperBoy2Sheet1_84
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 223
+        width: 19
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PaperBoy2Sheet1_85
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 222
+        width: 19
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PaperBoy2Sheet1_86
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 179
+        width: 20
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PaperBoy2Sheet1_87
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 179
+        width: 21
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PaperBoy2Sheet1_88
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 179
+        width: 21
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PaperBoy2Sheet1_89
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 179
+        width: 20
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PaperBoy2Sheet1_90
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 179
+        width: 21
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PaperBoy2Sheet1_91
+      rect:
+        serializedVersion: 2
+        x: 171
+        y: 179
+        width: 21
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PaperBoy2Sheet1_92
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 179
+        width: 21
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PaperBoy2Sheet1_93
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 179
+        width: 21
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PaperBoy2Sheet1_94
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 137
+        width: 21
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PaperBoy2Sheet1_95
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 137
+        width: 21
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PaperBoy2Sheet1_96
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 137
+        width: 21
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PaperBoy2Sheet1_97
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 137
+        width: 21
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PaperBoy2Sheet1_98
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 137
+        width: 20
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PaperBoy2Sheet1_99
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 137
+        width: 21
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PaperBoy2Sheet1_100
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 137
+        width: 21
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PaperBoy2Sheet1_101
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 137
+        width: 20
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PaperBoy2Sheet1_102
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 93
+        width: 24
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PaperBoy2Sheet1_103
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 93
+        width: 24
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PaperBoy2Sheet1_104
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 93
+        width: 24
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PaperBoy2Sheet1_105
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 93
+        width: 24
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PaperBoy2Sheet1_106
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 93
+        width: 24
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PaperBoy2Sheet1_107
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 93
+        width: 24
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PaperBoy2Sheet1_108
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 93
+        width: 24
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PaperBoy2Sheet1_109
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 93
+        width: 24
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PaperBoy2Sheet1_110
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 50
+        width: 24
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PaperBoy2Sheet1_111
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 50
+        width: 24
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PaperBoy2Sheet1_112
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 50
+        width: 24
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PaperBoy2Sheet1_113
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 50
+        width: 24
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PaperBoy2Sheet1_114
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 50
+        width: 24
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PaperBoy2Sheet1_115
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 50
+        width: 24
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PaperBoy2Sheet1_116
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 50
+        width: 24
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PaperBoy2Sheet1_117
+      rect:
+        serializedVersion: 2
+        x: 247
+        y: 50
+        width: 24
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PaperBoy2Sheet1_118
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 9
+        width: 14
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PaperBoy2Sheet1_119
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 9
+        width: 24
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PaperBoy2Sheet1_120
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 9
+        width: 24
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PaperBoy2Sheet1_121
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 9
+        width: 14
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
