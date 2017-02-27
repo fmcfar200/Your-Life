@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/BikeRide.unity
+- path: Assets/Scenes/HomeScene.unity
   isLoaded: 1
   isActive: 1
