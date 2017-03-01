@@ -10,6 +10,7 @@ public class PlayerInformationScript : MonoBehaviour {
     public int score;
     public float overallWellbeing;
     public List<int> wbStats = new List<int>();
+    int totalWellbeing;
     
     [Header("UI Objects")]
     public Text nameText;
@@ -34,8 +35,6 @@ public class PlayerInformationScript : MonoBehaviour {
             overallWellbeing = gameController.overallWellbeing;
 
         }
-
-       
     }
 
     void Update()
@@ -44,9 +43,9 @@ public class PlayerInformationScript : MonoBehaviour {
         score = gameController.playerScore;
         overallWellbeing = gameController.overallWellbeing;
 
-        nameText.text = gameController.playerName;
-        scoreText.text = "Score: " + gameController.playerScore.ToString();
-        wellbeingText.text = "Wellbeing: " + gameController.overallWellbeing.ToString("F1");
+        nameText.text = playerName;
+        scoreText.text = "Score: " + score.ToString();
+        wellbeingText.text = "Wellbeing: " + overallWellbeing.ToString("F1");
 
         for (int i = 0; i < wbStats.Count; i++)
         {
@@ -62,6 +61,9 @@ public class PlayerInformationScript : MonoBehaviour {
                 wellbeingPanel.SetActive(false);
                 break;
         }
+
+       
+
     }
 
     public void OpenWBPanel()
@@ -74,5 +76,15 @@ public class PlayerInformationScript : MonoBehaviour {
         {
             panelOpen = true;
         }
+    }
+
+    void UpdateWellbeing()
+    {
+        for (int i = 0; i < wbStats.Count; i++)
+        {
+            totalWellbeing += wbStats[i];
+        }
+
+        overallWellbeing = (totalWellbeing / 80) * 100;
     }
 }

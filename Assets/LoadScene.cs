@@ -11,7 +11,7 @@ public class LoadScene : MonoBehaviour {
     void Start()
     {
         async = SceneManager.LoadSceneAsync(1, LoadSceneMode.Single);
-        async.allowSceneActivation = false;
+        async.allowSceneActivation = true;
 
     }
 

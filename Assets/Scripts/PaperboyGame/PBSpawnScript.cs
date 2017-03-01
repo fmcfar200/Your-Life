@@ -16,7 +16,10 @@ public class PBSpawnScript : MonoBehaviour {
     int wave;
     int maxWave;
     int spawnAmount;
+    int score;
 
+    GameControllerScript gameController;
+    GameObject gameControllerObj;
 
     void Start()
     {
@@ -26,6 +29,11 @@ public class PBSpawnScript : MonoBehaviour {
         maxWave = 3;
         spawnAmount = 5;
 
+        gameControllerObj = GameObject.Find("GameController");
+        if(gameControllerObj!=null)
+        {
+            gameController = gameControllerObj.GetComponent<GameControllerScript>();
+        }
         foreach(Button button in buttons)
         {
             button.onClick.AddListener(() => ButtonClick());
@@ -41,6 +49,7 @@ public class PBSpawnScript : MonoBehaviour {
         {
             Application.LoadLevel("HomeScene");
         }
+        
     }
 
     IEnumerator Spawn()
@@ -89,6 +98,7 @@ public class PBSpawnScript : MonoBehaviour {
                 if (arrow.name == "ArrowUp(Clone)")
                 {
                     Destroy(arrow);
+                    AddScore();
                     Debug.Log("Correct");
 
                 }
@@ -102,6 +112,7 @@ public class PBSpawnScript : MonoBehaviour {
                 if (arrow.name == "ArrowDown(Clone)")
                 {
                     Destroy(arrow);
+                    AddScore();
                     Debug.Log("Correct");
 
                 }
@@ -115,6 +126,7 @@ public class PBSpawnScript : MonoBehaviour {
                 if (arrow.name == "ArrowLeft(Clone)")
                 {
                     Destroy(arrow);
+                    AddScore();
                     Debug.Log("Correct");
 
                 }
@@ -128,6 +140,7 @@ public class PBSpawnScript : MonoBehaviour {
                 if (arrow.name == "ArrowRight(Clone)")
                 {
                     Destroy(arrow);
+                    AddScore();
                     Debug.Log("Correct");
 
                 }
@@ -139,6 +152,12 @@ public class PBSpawnScript : MonoBehaviour {
 
 
         }
+    }
+
+    void AddScore()
+    {
+        score += 10;
+        gameController.playerScore += score;
     }
 
 }

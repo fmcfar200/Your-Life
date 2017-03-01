@@ -3,6 +3,7 @@ using System.Collections;
 using System.Runtime.Serialization.Formatters.Binary;
 using System;
 using System.IO;
+using UnityEngine.SceneManagement;
 
 public class GameControllerScript : MonoBehaviour {
 
@@ -44,43 +45,43 @@ public class GameControllerScript : MonoBehaviour {
 
     void Start()
     {
-        playerObj = GameObject.FindGameObjectWithTag("Player");
-        timeManagerObj = GameObject.Find("TimeManager");
-
-        if (playerObj != null)
+        if (UnityEditor.EditorApplication.currentScene == "HomeScene")
         {
-            playerInfo = playerObj.GetComponent<PlayerInformationScript>();
+            playerObj = GameObject.FindGameObjectWithTag("Player");
+            timeManagerObj = GameObject.Find("TimeManager");
 
-            playerName = playerInfo.playerName;
-            playerScore = playerInfo.score;
-        }
-        else
-        {
-            Debug.LogError(playerObj.name + " not found!!");
-        }
+            if (playerObj != null)
+            {
+                playerInfo = playerObj.GetComponent<PlayerInformationScript>();
 
-        if (timeManagerObj != null)
-        {
-            timeScript = timeManagerObj.GetComponent<TimeCycleScript>();
+                playerName = playerInfo.playerName;
+                playerScore = playerInfo.score;
+            }
+            else
+            {
+                Debug.LogError(playerObj.name + " not found!!");
+            }
 
-            day = timeScript.currentDay;
-            hour = timeScript.hour;
-        }
-        else
-        {
-            Debug.LogError(timeManagerObj.name + " not found!!");
-        }
+            if (timeManagerObj != null)
+            {
+                timeScript = timeManagerObj.GetComponent<TimeCycleScript>();
 
-        playerName = "Scott";
-        playerScore = 0;
-        overallWellbeing = 65.0f;
+                day = timeScript.currentDay;
+                hour = timeScript.hour;
+            }
+            else
+            {
+                Debug.LogError(timeManagerObj.name + " not found!!");
+            }
+
+        }
     }
 
     void Update()
     {
-        UpdatePlayerData();
-        UpdateTimeData();
-
+        
+          
+        
         //TEMP TO QUIT
         if (Input.GetKeyDown(KeyCode.Escape))
         {
@@ -89,17 +90,7 @@ public class GameControllerScript : MonoBehaviour {
         }
     }
 
-    void UpdatePlayerData()
-    {
-        playerName = playerInfo.playerName;
-        playerScore = playerInfo.score;
-    }
-
-    void UpdateTimeData()
-    {
-        day = timeScript.currentDay;
-        hour = timeScript.hour;
-    }
+   
 
     public void Save()
     {
