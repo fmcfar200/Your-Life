@@ -4,6 +4,7 @@ using System.Runtime.Serialization.Formatters.Binary;
 using System;
 using System.IO;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameControllerScript : MonoBehaviour {
 
@@ -28,6 +29,10 @@ public class GameControllerScript : MonoBehaviour {
     GameObject playerObj;
     GameObject timeManagerObj;
     GameObject missionManagerObj;
+    Button saveButton;
+    Button loadButton;
+
+
 
 
     void Awake()
@@ -73,6 +78,11 @@ public class GameControllerScript : MonoBehaviour {
                 Debug.LogError(timeManagerObj.name + " not found!!");
             }
 
+            saveButton = GameObject.Find("SaveButton").GetComponent<Button>();
+            loadButton = GameObject.Find("LoadButton").GetComponent<Button>();
+
+            saveButton.onClick.AddListener(() => Save());
+            loadButton.onClick.AddListener(() => Load());
         }
     }
 
