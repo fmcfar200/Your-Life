@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 
 public class PBSpawnScript : MonoBehaviour {
 
@@ -49,7 +50,7 @@ public class PBSpawnScript : MonoBehaviour {
     {
         if (spawning == false)
         {
-            Application.LoadLevel("HomeScene");
+            SceneManager.LoadScene(1);
         }
 
         scoreText.text = "Score: " + score.ToString();
@@ -161,6 +162,11 @@ public class PBSpawnScript : MonoBehaviour {
     {
         score += 10;
         gameController.playerScore += score;
+    }
+
+    public void Return()
+    {
+        SceneManager.LoadScene(1);
     }
 
 }
