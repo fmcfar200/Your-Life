@@ -10,7 +10,6 @@ public class PlayerInformationScript : MonoBehaviour {
     public int score;
     public float overallWellbeing;
     public List<int> wbStats = new List<int>();
-    public Dictionary<string, int> wbDiction = new Dictionary<string, int>();
 
     int totalWellbeing;
     
@@ -38,17 +37,9 @@ public class PlayerInformationScript : MonoBehaviour {
 
         }
 
-        wbDiction.Add("Safe", wbStats[0]);
-        wbDiction.Add("Healthy", wbStats[1]);
-        wbDiction.Add("Active", wbStats[2]);
-        wbDiction.Add("N", wbStats[3]);
-        wbDiction.Add("Accepted", wbStats[4]);
-        wbDiction.Add("Respected", wbStats[5]);
-        wbDiction.Add("Responsible", wbStats[6]);
-        wbDiction.Add("Included", wbStats[7]);
+        
 
         UpdateWellbeing();
-
 
 
     }

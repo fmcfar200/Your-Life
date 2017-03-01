@@ -78,7 +78,6 @@ public class GameControllerScript : MonoBehaviour {
 
     void Update()
     {
-
         //TEMP TO QUIT
         if (Input.GetKeyDown(KeyCode.Escape))
         {
@@ -86,11 +85,7 @@ public class GameControllerScript : MonoBehaviour {
             
         }
 
-       
-        
-            
-        
-       
+      
     }
 
    
@@ -137,13 +132,5 @@ public class GameControllerScript : MonoBehaviour {
         public float overallWellbeing;
     }
 
-    public void GrabGameStats()
-    {
-        day = timeScript.currentDay;
-        hour = timeScript.hour;
-
-        playerName = playerInfo.playerName;
-        playerScore = playerInfo.score;
-        overallWellbeing = playerInfo.overallWellbeing;
-    }
+    
 }
