@@ -20,6 +20,9 @@ public class MissionManagerScript : MonoBehaviour {
     TimeCycleScript timeScript;
     GameObject timeManager;
 
+    GameControllerScript gameController;
+    GameObject gameControllerObj;
+
     //objects
     public GameObject newspaper;
 
@@ -34,6 +37,8 @@ public class MissionManagerScript : MonoBehaviour {
     {
         player = GameObject.FindGameObjectWithTag("Player");
         timeManager = GameObject.Find("TimeManager");
+        gameControllerObj = GameObject.Find("GameController");
+
         if (player !=null)
         {
             playerInfo = player.GetComponent<PlayerInformationScript>();
@@ -50,6 +55,12 @@ public class MissionManagerScript : MonoBehaviour {
         else
         {
             Debug.LogError("Cant find time");
+        }
+
+        if (gameControllerObj!= null)
+        {
+            gameController = gameControllerObj.GetComponent<GameControllerScript>();
+
         }
 
     }
@@ -69,6 +80,7 @@ public class MissionManagerScript : MonoBehaviour {
 
     public void LoadMinigameLevel(string gameName)
     {
+        
         if (gameName == "BikeRide")
         {
             Application.LoadLevel("BikeRide");

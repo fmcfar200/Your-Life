@@ -63,19 +63,19 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\GameControllerScript.cs" />
+    <Compile Include="Assets\LoadScene.cs" />
     <Compile Include="Assets\Scripts\Camera\CameraScript.cs" />
     <Compile Include="Assets\Scripts\ItemScript.cs" />
-    <Compile Include="Assets\Scripts\MenuManagerScript.cs" />
-    <Compile Include="Assets\Scripts\MissionManagerScript.cs" />
+    <Compile Include="Assets\Scripts\Managers\GameControllerScript.cs" />
+    <Compile Include="Assets\Scripts\Managers\MenuManagerScript.cs" />
+    <Compile Include="Assets\Scripts\Managers\MissionManagerScript.cs" />
+    <Compile Include="Assets\Scripts\Managers\TimeCycleScript.cs" />
     <Compile Include="Assets\Scripts\PaperboyGame\ArrowScript.cs" />
     <Compile Include="Assets\Scripts\PaperboyGame\PBSpawnScript.cs" />
     <Compile Include="Assets\Scripts\PaperboyGame\PaperObjectScript.cs" />
     <Compile Include="Assets\Scripts\PaperboyGame\PaperboyPlayerScript.cs" />
-    <Compile Include="Assets\Scripts\PaperboyGame\SceneManager.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerInformationScript.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerMovement.cs" />
-    <Compile Include="Assets\Scripts\TimeCycleScript.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
 </Project>

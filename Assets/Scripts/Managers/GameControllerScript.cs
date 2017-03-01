@@ -15,8 +15,8 @@ public class GameControllerScript : MonoBehaviour {
     public float overallWellbeing;
 
     //time data
-    int day;
-    int hour;
+    public int day;
+    public int hour;
 
     //scripts
     PlayerInformationScript playerInfo;
@@ -56,6 +56,8 @@ public class GameControllerScript : MonoBehaviour {
 
                 playerName = playerInfo.playerName;
                 playerScore = playerInfo.score;
+                overallWellbeing = playerInfo.overallWellbeing;
+
             }
             else
             {
@@ -65,9 +67,6 @@ public class GameControllerScript : MonoBehaviour {
             if (timeManagerObj != null)
             {
                 timeScript = timeManagerObj.GetComponent<TimeCycleScript>();
-
-                day = timeScript.currentDay;
-                hour = timeScript.hour;
             }
             else
             {
@@ -79,15 +78,19 @@ public class GameControllerScript : MonoBehaviour {
 
     void Update()
     {
-        
-          
-        
+
         //TEMP TO QUIT
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             Application.Quit();
             
         }
+
+       
+        
+            
+        
+       
     }
 
    
@@ -132,5 +135,15 @@ public class GameControllerScript : MonoBehaviour {
         public string name;
         public int score;
         public float overallWellbeing;
+    }
+
+    public void GrabGameStats()
+    {
+        day = timeScript.currentDay;
+        hour = timeScript.hour;
+
+        playerName = playerInfo.playerName;
+        playerScore = playerInfo.score;
+        overallWellbeing = playerInfo.overallWellbeing;
     }
 }
