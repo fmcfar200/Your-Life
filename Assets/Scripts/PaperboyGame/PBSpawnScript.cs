@@ -21,6 +21,8 @@ public class PBSpawnScript : MonoBehaviour {
     GameControllerScript gameController;
     GameObject gameControllerObj;
 
+    public Text scoreText;
+
     void Start()
     {
         spawnDelay = 2.0f;
@@ -49,7 +51,8 @@ public class PBSpawnScript : MonoBehaviour {
         {
             Application.LoadLevel("HomeScene");
         }
-        
+
+        scoreText.text = "Score: " + score.ToString();
     }
 
     IEnumerator Spawn()

@@ -10,6 +10,8 @@ public class PlayerInformationScript : MonoBehaviour {
     public int score;
     public float overallWellbeing;
     public List<int> wbStats = new List<int>();
+    public Dictionary<string, int> wbDiction = new Dictionary<string, int>();
+
     int totalWellbeing;
     
     [Header("UI Objects")]
@@ -35,6 +37,20 @@ public class PlayerInformationScript : MonoBehaviour {
             overallWellbeing = gameController.overallWellbeing;
 
         }
+
+        wbDiction.Add("Safe", wbStats[0]);
+        wbDiction.Add("Healthy", wbStats[1]);
+        wbDiction.Add("Active", wbStats[2]);
+        wbDiction.Add("N", wbStats[3]);
+        wbDiction.Add("Accepted", wbStats[4]);
+        wbDiction.Add("Respected", wbStats[5]);
+        wbDiction.Add("Responsible", wbStats[6]);
+        wbDiction.Add("Included", wbStats[7]);
+
+        UpdateWellbeing();
+
+
+
     }
 
     void Update()
@@ -85,6 +101,7 @@ public class PlayerInformationScript : MonoBehaviour {
             totalWellbeing += wbStats[i];
         }
 
-        overallWellbeing = (totalWellbeing / 80) * 100;
+        overallWellbeing = (float) (totalWellbeing / 8) * 100;
+        Debug.Log(overallWellbeing.ToString("F1") + " "+totalWellbeing);
     }
 }
