@@ -45,7 +45,7 @@ public class GameControllerScript : MonoBehaviour {
 
     void Start()
     {
-        if (UnityEditor.EditorApplication.currentScene == "HomeScene")
+        if (Application.loadedLevelName == "HomeScene")
         {
             playerObj = GameObject.FindGameObjectWithTag("Player");
             timeManagerObj = GameObject.Find("TimeManager");

@@ -25,16 +25,27 @@ public class TimeCycleScript : MonoBehaviour {
     public GameObject lightObj;
     Light lightComp;
 
+    GameControllerScript gameController;
+    GameObject gameControllerObj;
+
+
 
     void Start()
     {
         lightComp = lightObj.GetComponent<Light>(); // gets the light component
-        currentDay = 0;
-        hour = 9;
         speedUp = 1;
         nextHour = maxHourRate * speedUp;
         speedActive = false;
 
+        gameControllerObj = GameObject.Find("GameController");
+
+        if (gameControllerObj!=null)
+        {
+            gameController = gameControllerObj.GetComponent<GameControllerScript>();
+            currentDay = gameController.day;
+            hour = gameController.hour;
+
+        }
 
     }
 
@@ -99,6 +110,10 @@ public class TimeCycleScript : MonoBehaviour {
         {
             speedUp = 1;
         }
+
+        gameController.hour = hour;
+        gameController.day = currentDay;
+        
 
     }
 
