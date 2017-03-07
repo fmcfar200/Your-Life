@@ -76,6 +76,8 @@ public class PBSpawnScript : MonoBehaviour {
             }
             else
             {
+                gameController.healthy += 3;
+                gameController.active += 3;
                 spawning = false;
             }
         }

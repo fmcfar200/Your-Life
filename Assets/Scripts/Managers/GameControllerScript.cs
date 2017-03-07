@@ -19,6 +19,11 @@ public class GameControllerScript : MonoBehaviour {
     public int day;
     public int hour;
 
+    public int safe, healthy, 
+               active, nurtured,
+               accepted, respected,
+               responsible, included;
+
     //scripts
     PlayerInformationScript playerInfo;
     MissionManagerScript missionManager;
@@ -88,6 +93,8 @@ public class GameControllerScript : MonoBehaviour {
 
     void Update()
     {
+
+        overallWellbeing = ((healthy + active + safe + nurtured + accepted + respected + responsible + included) / 80) * 100;  
         //TEMP TO QUIT
         if (Input.GetKeyDown(KeyCode.Escape))
         {
