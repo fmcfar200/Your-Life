@@ -51,6 +51,8 @@ public class GameControllerScript : MonoBehaviour {
         {
             Destroy(gameObject);
         }
+        day = 0;
+        hour = 9;
     }
 
     void Start()
@@ -88,6 +90,8 @@ public class GameControllerScript : MonoBehaviour {
 
             saveButton.onClick.AddListener(() => Save());
             loadButton.onClick.AddListener(() => Load());
+
+           
         }
     }
 

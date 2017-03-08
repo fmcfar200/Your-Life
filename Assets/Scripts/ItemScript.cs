@@ -14,10 +14,9 @@ public class ItemScript : MonoBehaviour {
     Button noButton;
 
 
-    void Start()
+    void Awake()
     {
         clicked = false;
-        promptOpen = false;
         quickPrompt = GameObject.Find("Quick_Prompt");
         if (quickPrompt != null)
         {
@@ -33,17 +32,34 @@ public class ItemScript : MonoBehaviour {
         }
     }
 
+    void Start()
+    {
+        quickPrompt.SetActive(false);
+    }
+
     void Update()
     {
+
         if (clicked == true)
         {
+
             if (gameObject.tag == "Mission Item")
             {
-                 if (this.gameObject.name == "Bike")
+                
+                if (gameObject.name == "Bike")
                 {
-                    promptOpen = true;
+                    quickPrompt.SetActive(true);
                     promptTitle.text = "Bike Ride!";
                     promptDesc.text = "Playing this game will increase your Active and Health stats. Would you like to begin?";
+                    yesButton.onClick.AddListener(() => YesClick());
+                    noButton.onClick.AddListener(() => NoClick());
+                }
+
+                if (gameObject.name == "Car")
+                {
+                    quickPrompt.SetActive(true);
+                    promptTitle.text = "Car";
+                    promptDesc.text = "Playing this game will increase your Responsible and Respectful stats. Would you like to begin?";
                     yesButton.onClick.AddListener(() => YesClick());
                     noButton.onClick.AddListener(() => NoClick());
                 }
@@ -55,16 +71,7 @@ public class ItemScript : MonoBehaviour {
             clicked = false;
         }
         
-        if (promptOpen == true)
-        {
-            quickPrompt.SetActive(true);
-            Time.timeScale = 0;
-        }
-        else
-        {
-            Time.timeScale = 1;
-            quickPrompt.SetActive(false);
-        }
+       
         
     }
 
@@ -81,17 +88,7 @@ public class ItemScript : MonoBehaviour {
         if (manager != null)
         {
             missionManager = manager.GetComponent<MissionManagerScript>();
-            if (gameObject.name == "Newspaper_Item")
-            {
-                this.GetComponent<BoxCollider>().enabled = false;
-
-                promptOpen = false;
-                quickPrompt.SetActive(false);
-                promptDesc.text = null;
-                promptTitle.text = null;
-
-                missionManager.currentMission++;
-            }
+            
             if (gameObject.name == "Bike")
             {
 
@@ -103,11 +100,22 @@ public class ItemScript : MonoBehaviour {
                 Application.LoadLevel("BikeRide");
 
             }
+            if (gameObject.name == "Car")
+            {
+
+                promptOpen = false;
+                quickPrompt.SetActive(false);
+                promptDesc.text = null;
+                promptTitle.text = null;
+
+                Application.LoadLevel("CarRide");
+
+            }
         }
     }
 
     void NoClick()
     {
-        promptOpen = false;
+        quickPrompt.SetActive(false);
     }
 }
