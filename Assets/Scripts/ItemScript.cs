@@ -8,6 +8,8 @@ public class ItemScript : MonoBehaviour {
     GameObject clickedItem;
 
     public GameObject quickPrompt;
+    public GameObject upgradeMenu;
+
     Text promptTitle;
     Text promptDesc;
     Button yesButton;
@@ -62,6 +64,11 @@ public class ItemScript : MonoBehaviour {
                     promptDesc.text = "Playing this game will increase your Responsible and Respectful stats. Would you like to begin?";
                     yesButton.onClick.AddListener(() => YesClick());
                     noButton.onClick.AddListener(() => NoClick());
+                }
+
+                if (gameObject.name == "TV")
+                {
+                    upgradeMenu.SetActive(true);
                 }
             }
             else
