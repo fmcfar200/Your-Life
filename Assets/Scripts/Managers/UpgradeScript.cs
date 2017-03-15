@@ -15,7 +15,7 @@ public class UpgradeScript : MonoBehaviour {
 
     public Text costTextBike;
 
-    //
+    
     int bikeTier;
     int carTier;
 
@@ -46,13 +46,16 @@ public class UpgradeScript : MonoBehaviour {
         {
             gameController = gameControllerObj.GetComponent<GameControllerScript>();
         }
+        else
+        {
+            Debug.LogError("cant find controller");
+        }
         upgradeMenu.SetActive(false);
     }
 
     void Start()
     {
-        bikeTier = 0;
-        carTier = 0;
+       
 
         foreach(Button button in bikeUpgradeButtons)
         {
@@ -60,11 +63,15 @@ public class UpgradeScript : MonoBehaviour {
             button.interactable = false;
         }
 
+        bikeTier = gameController.bikeTier;
+        carTier = gameController.carTier;
+
     }
 
     void Update()
     {
         score = gameController.playerScore;
+       
 
         if (bikeTier == 0)
         {
@@ -86,6 +93,8 @@ public class UpgradeScript : MonoBehaviour {
         }
 
         costTextBike.text = bikeCost.ToString();
+
+       
     }
 
     void UpgradeBike()
@@ -94,6 +103,8 @@ public class UpgradeScript : MonoBehaviour {
         {
             bikeTier += 1;
         }
+
+        gameController.bikeTier = bikeTier;
         
     }
 

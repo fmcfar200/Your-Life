@@ -10,6 +10,7 @@ public class GameControllerScript : MonoBehaviour {
 
     public static GameControllerScript controller;
 
+
     //playerdata
     public string playerName;
     public int playerScore;
@@ -23,6 +24,9 @@ public class GameControllerScript : MonoBehaviour {
                active, nurtured,
                accepted, respected,
                responsible, included;
+
+    public int bikeTier;
+    public int carTier;
 
     //scripts
     PlayerInformationScript playerInfo;
@@ -53,6 +57,9 @@ public class GameControllerScript : MonoBehaviour {
         }
         day = 0;
         hour = 9;
+
+        bikeTier = 0;
+        carTier = 0;
     }
 
     void Start()

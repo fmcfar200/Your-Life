@@ -76,9 +76,17 @@ public class PBSpawnScript : MonoBehaviour {
             }
             else
             {
-                gameController.healthy += 3;
-                gameController.active += 3;
-                spawning = false;
+                if (gameController.bikeTier > 0)
+                {
+                    gameController.healthy += 2 * gameController.bikeTier;
+                    gameController.active += 2 * gameController.bikeTier;
+                    spawning = false;
+                }
+                else
+                {
+                    gameController.healthy += 2;
+                    gameController.active += 2;
+                }
             }
         }
     }
