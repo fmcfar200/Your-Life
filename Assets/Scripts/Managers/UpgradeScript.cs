@@ -7,8 +7,14 @@ public class UpgradeScript : MonoBehaviour {
 
     //GO and Buttons
     GameObject upgradeMenu;
+
+    [Header("Bike Buttons")]
     public List<Button> bikeUpgradeButtons = new List<Button>();
+    [Header("Car Buttons")]
     public List<Button> carUpgradeButtons = new List<Button>();
+
+    [Header("Bike Objects")]
+    public List<GameObject> bikes = new List<GameObject>();
 
     GameObject gameControllerObj;
     GameControllerScript gameController;
@@ -24,6 +30,7 @@ public class UpgradeScript : MonoBehaviour {
     int bikeCost;
     int carCost;
 
+    bool bikeSpawned;
 
     void Awake()
     {
@@ -45,53 +52,63 @@ public class UpgradeScript : MonoBehaviour {
         if (gameControllerObj !=null)
         {
             gameController = gameControllerObj.GetComponent<GameControllerScript>();
+            bikeTier = gameController.bikeTier;
+            carTier = gameController.carTier;
         }
         else
         {
             Debug.LogError("cant find controller");
         }
         upgradeMenu.SetActive(false);
+        
+        foreach(GameObject bike in bikes)
+        {
+            bike.SetActive(false);
+        }
+
     }
 
     void Start()
     {
        
-
         foreach(Button button in bikeUpgradeButtons)
         {
             button.onClick.AddListener(() => UpgradeBike());
             button.interactable = false;
         }
 
-        bikeTier = gameController.bikeTier;
-        carTier = gameController.carTier;
+
+        
 
     }
 
     void Update()
     {
         score = gameController.playerScore;
-       
 
-        if (bikeTier == 0)
+        bikes[bikeTier].SetActive(true);
+        switch(bikeTier)
         {
-            bikeUpgradeButtons[0].interactable = true;
-            bikeCost = 2000;
-        }
-        else if (bikeTier == 1)
-        {
-            bikeUpgradeButtons[0].interactable = true;
-            bikeUpgradeButtons[1].interactable = true;
-            bikeCost = 4000;
-        }
-        else if (bikeTier == 2)
-        {
-            bikeUpgradeButtons[0].interactable = true;
-            bikeUpgradeButtons[1].interactable = true;
-            bikeUpgradeButtons[2].interactable = true;
-            bikeCost = 8000;
-        }
+            case 0:
 
+                bikeUpgradeButtons[0].interactable = true;
+                bikeCost = 2000;
+
+                break;
+            case 1:
+                bikes[bikeTier - 1].SetActive(false);
+                bikeUpgradeButtons[0].interactable = true;
+                bikeUpgradeButtons[1].interactable = true;
+                bikeCost = 4000;
+                break;
+            case 2:
+                bikeUpgradeButtons[0].interactable = true;
+                bikeUpgradeButtons[1].interactable = true;
+                bikeUpgradeButtons[2].interactable = true;
+                bikeCost = 8000;
+                break;
+        }
+      
         costTextBike.text = bikeCost.ToString();
 
        
@@ -105,6 +122,8 @@ public class UpgradeScript : MonoBehaviour {
             bikeUpgradeButtons[bikeTier - 1].GetComponent<Image>().color = Color.green;
             bikeUpgradeButtons[bikeTier - 1].onClick.RemoveAllListeners();
 
+          
+
         }
 
         gameController.bikeTier = bikeTier;
@@ -115,6 +134,8 @@ public class UpgradeScript : MonoBehaviour {
     {
         upgradeMenu.SetActive(false);
     }
+
+    
 
 
 
