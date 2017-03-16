@@ -11,7 +11,7 @@ public class PlayerInformationScript : MonoBehaviour {
     public float overallWellbeing;
     public List<int> wbStats = new List<int>();
 
-    int totalWellbeing;
+    float totalWellbeing;
     
     [Header("UI Objects")]
     public Text nameText;
@@ -37,9 +37,9 @@ public class PlayerInformationScript : MonoBehaviour {
 
         }
 
-        
 
-        
+
+        UpdateWellbeing();  
 
 
     }
@@ -61,7 +61,7 @@ public class PlayerInformationScript : MonoBehaviour {
 
         nameText.text = playerName;
         scoreText.text = "Score: " + score.ToString();
-        wellbeingText.text = "Wellbeing: " + overallWellbeing.ToString("F1");
+        wellbeingText.text = "Wellbeing: " + overallWellbeing.ToString("F1") + "%";
 
 
 
@@ -103,7 +103,7 @@ public class PlayerInformationScript : MonoBehaviour {
             totalWellbeing += wbStats[i];
         }
 
-        overallWellbeing = (float) (totalWellbeing / 80) * 100;
-        Debug.Log(overallWellbeing.ToString("F1") + " "+totalWellbeing);
+        overallWellbeing =(totalWellbeing / 80) * 100;
+        Debug.Log(overallWellbeing.ToString() + " "+totalWellbeing);
     }
 }

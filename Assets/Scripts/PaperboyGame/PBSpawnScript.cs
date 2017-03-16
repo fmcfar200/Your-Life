@@ -24,19 +24,38 @@ public class PBSpawnScript : MonoBehaviour {
 
     public Text scoreText;
 
+    int bikeTier;
+
     void Start()
     {
-        spawnDelay = 2.0f;
         spawning = true;
         wave = 0;
         maxWave = 3;
-        spawnAmount = 5;
 
         gameControllerObj = GameObject.Find("GameController");
         if(gameControllerObj!=null)
         {
             gameController = gameControllerObj.GetComponent<GameControllerScript>();
+            bikeTier = gameController.bikeTier;
+
+            if (bikeTier == 0)
+            {
+                spawnDelay = 1.75f;
+                spawnAmount = 5;
+
+            }
+            else if (bikeTier == 1)
+            {
+                spawnDelay = 1.5f;
+                spawnAmount = 8;
+            }
+            else if (bikeTier > 1)
+            {
+                spawnDelay = 1.25f;
+                spawnAmount = 10;
+            }
         }
+
         foreach(Button button in buttons)
         {
             button.onClick.AddListener(() => ButtonClick());
@@ -80,13 +99,14 @@ public class PBSpawnScript : MonoBehaviour {
                 {
                     gameController.healthy += 2 * gameController.bikeTier;
                     gameController.active += 2 * gameController.bikeTier;
-                    spawning = false;
                 }
                 else
                 {
                     gameController.healthy += 2;
                     gameController.active += 2;
                 }
+                spawning = false;
+
             }
         }
     }

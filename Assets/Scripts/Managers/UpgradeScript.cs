@@ -102,6 +102,9 @@ public class UpgradeScript : MonoBehaviour {
         if (score >= bikeCost)
         {
             bikeTier += 1;
+            bikeUpgradeButtons[bikeTier - 1].GetComponent<Image>().color = Color.green;
+            bikeUpgradeButtons[bikeTier - 1].onClick.RemoveAllListeners();
+
         }
 
         gameController.bikeTier = bikeTier;

@@ -10,21 +10,25 @@ public class GameControllerScript : MonoBehaviour {
 
     public static GameControllerScript controller;
 
-
+    [Header("Player Data")]
     //playerdata
     public string playerName;
     public int playerScore;
     public float overallWellbeing;
 
+    [Header("Time Data")]
     //time data
     public int day;
     public int hour;
+
+    [Header("Stats Data")]
 
     public int safe, healthy, 
                active, nurtured,
                accepted, respected,
                responsible, included;
 
+    [Header("Upgrade Data")]
     public int bikeTier;
     public int carTier;
 
