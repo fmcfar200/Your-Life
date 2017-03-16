@@ -18,18 +18,37 @@ public class CarSpawnScript : MonoBehaviour {
     GameObject gameControllerObj;
     GameControllerScript gameController;
 
+    int carTier;
+
+
     void Start()
     {
-        spawnDelay = 2.0f;
         spawning = true;
         wave = 0;
         maxWave = 3;
-        spawnAmount = 5;
 
         gameControllerObj = GameObject.Find("GameController");
         if (gameControllerObj != null)
         {
             gameController = gameControllerObj.GetComponent<GameControllerScript>();
+            carTier = gameController.carTier;
+
+            if (carTier == 0)
+            {
+                spawnDelay = 1.75f;
+                spawnAmount = 5;
+
+            }
+            else if (carTier == 1)
+            {
+                spawnDelay = 1.5f;
+                spawnAmount = 8;
+            }
+            else if (carTier > 1)
+            {
+                spawnDelay = 1.25f;
+                spawnAmount = 10;
+            }
         }
 
         StartCoroutine(Spawn());
@@ -63,10 +82,20 @@ public class CarSpawnScript : MonoBehaviour {
             }
             else
             {
-                gameController.respected += 3;
-                gameController.responsible += 3;
+                if (gameController.carTier > 0)
+                {
+                    gameController.respected += 2 * gameController.carTier;
+                    gameController.responsible += 2 * gameController.carTier;
+                }
+                else
+                {
+                    gameController.respected += 2;
+                    gameController.responsible += 2;
+                }
                 spawning = false;
+
             }
         }
-    }
-}
+        }
+ }
+

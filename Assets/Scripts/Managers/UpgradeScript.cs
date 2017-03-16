@@ -16,11 +16,15 @@ public class UpgradeScript : MonoBehaviour {
     [Header("Bike Objects")]
     public List<GameObject> bikes = new List<GameObject>();
 
+    public Material carMaterial1;
+    public Material carMaterial2;
+    GameObject carObj;
+
     GameObject gameControllerObj;
     GameControllerScript gameController;
 
     public Text costTextBike;
-
+    public Text costTextCar;
     
     int bikeTier;
     int carTier;
@@ -30,7 +34,6 @@ public class UpgradeScript : MonoBehaviour {
     int bikeCost;
     int carCost;
 
-    bool bikeSpawned;
 
     void Awake()
     {
@@ -45,6 +48,11 @@ public class UpgradeScript : MonoBehaviour {
             carUpgradeButtons.Add(GameObject.Find("Car_UG_Button_2").GetComponent<Button>());
             carUpgradeButtons.Add(GameObject.Find("Car_UG_Button_3").GetComponent<Button>());
 
+            carObj = GameObject.Find("JEEP_BODY");
+            if (carObj == null)
+            {
+                Debug.LogError("No car!!!");
+            }
            
         }
 
@@ -59,13 +67,11 @@ public class UpgradeScript : MonoBehaviour {
         {
             Debug.LogError("cant find controller");
         }
+
+
         upgradeMenu.SetActive(false);
         
-        foreach(GameObject bike in bikes)
-        {
-            bike.SetActive(false);
-        }
-
+        
     }
 
     void Start()
@@ -77,8 +83,19 @@ public class UpgradeScript : MonoBehaviour {
             button.interactable = false;
         }
 
+        foreach(Button button in carUpgradeButtons)
+        {
+            button.onClick.AddListener(() => UpgradeCar());
 
-        
+            button.interactable = false;
+        }
+        foreach (GameObject bike in bikes)
+        {
+            bike.SetActive(false);
+        }
+
+
+
 
     }
 
@@ -108,9 +125,32 @@ public class UpgradeScript : MonoBehaviour {
                 bikeCost = 8000;
                 break;
         }
-      
-        costTextBike.text = bikeCost.ToString();
 
+        switch (carTier)
+        {
+            case 0:
+                carObj.GetComponent<Renderer>().material = carMaterial1;
+                carUpgradeButtons[0].interactable = true;
+                carCost = 2500;
+
+                break;
+            case 1:
+                carObj.GetComponent<Renderer>().material = carMaterial2;
+                carUpgradeButtons[0].interactable = true;
+                carUpgradeButtons[1].interactable = true;
+                carCost = 4500;
+                break;
+            case 2:
+                carObj.GetComponent<Renderer>().material = carMaterial2;
+                carUpgradeButtons[0].interactable = true;
+                carUpgradeButtons[1].interactable = true;
+                carUpgradeButtons[2].interactable = true;
+                carCost = 8500;
+                break;
+        }
+
+        costTextBike.text = "Cost: " + bikeCost.ToString();
+        costTextCar.text = "Cost: " + carCost.ToString();
        
     }
 
@@ -128,6 +168,22 @@ public class UpgradeScript : MonoBehaviour {
 
         gameController.bikeTier = bikeTier;
         
+    }
+
+    void UpgradeCar()
+    {
+        if (score >= carCost)
+        {
+            carTier += 1;
+            carUpgradeButtons[carTier - 1].GetComponent<Image>().color = Color.green;
+            carUpgradeButtons[carTier - 1].onClick.RemoveAllListeners();
+
+
+
+        }
+
+        gameController.carTier = carTier;
+
     }
 
     public void CloseWindow()

@@ -79,7 +79,6 @@ public class GameControllerScript : MonoBehaviour {
 
                 playerName = playerInfo.playerName;
                 playerScore = playerInfo.score;
-                overallWellbeing = playerInfo.overallWellbeing;
 
             }
             else

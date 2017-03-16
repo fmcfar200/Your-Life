@@ -39,7 +39,6 @@ public class PlayerInformationScript : MonoBehaviour {
 
 
 
-        UpdateWellbeing();  
 
 
     }
@@ -48,7 +47,7 @@ public class PlayerInformationScript : MonoBehaviour {
     {
         playerName = gameController.playerName;
         score = gameController.playerScore;
-
+        overallWellbeing = gameController.overallWellbeing;
         wbStats[0] = gameController.safe;
         wbStats[1] = gameController.healthy;
         wbStats[2] = gameController.active;
@@ -96,14 +95,5 @@ public class PlayerInformationScript : MonoBehaviour {
         }
     }
 
-    void UpdateWellbeing()
-    {
-        for (int i = 0; i < wbStats.Count; i++)
-        {
-            totalWellbeing += wbStats[i];
-        }
-
-        overallWellbeing =(totalWellbeing / 80) * 100;
-        Debug.Log(overallWellbeing.ToString() + " "+totalWellbeing);
-    }
+    
 }
