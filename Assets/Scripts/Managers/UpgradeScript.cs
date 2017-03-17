@@ -151,13 +151,15 @@ public class UpgradeScript : MonoBehaviour {
 
         costTextBike.text = "Cost: " + bikeCost.ToString();
         costTextCar.text = "Cost: " + carCost.ToString();
-       
+
+
     }
 
     void UpgradeBike()
     {
         if (score >= bikeCost)
         {
+            gameController.playerScore -= bikeCost;
             bikeTier += 1;
             bikeUpgradeButtons[bikeTier - 1].GetComponent<Image>().color = Color.green;
             bikeUpgradeButtons[bikeTier - 1].onClick.RemoveAllListeners();
@@ -174,6 +176,7 @@ public class UpgradeScript : MonoBehaviour {
     {
         if (score >= carCost)
         {
+            gameController.playerScore -= carCost;
             carTier += 1;
             carUpgradeButtons[carTier - 1].GetComponent<Image>().color = Color.green;
             carUpgradeButtons[carTier - 1].onClick.RemoveAllListeners();

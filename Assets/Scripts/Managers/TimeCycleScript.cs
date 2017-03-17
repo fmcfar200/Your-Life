@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using System.Collections.Generic;
 
 public class TimeCycleScript : MonoBehaviour {
 
@@ -28,6 +29,8 @@ public class TimeCycleScript : MonoBehaviour {
     GameControllerScript gameController;
     GameObject gameControllerObj;
 
+
+    public List<Material> materials = new List<Material>();
 
 
     void Start()
@@ -95,10 +98,13 @@ public class TimeCycleScript : MonoBehaviour {
         if (hour >= 8 && hour <= 19)
         {
             lightComp.intensity = 1;
+            RenderSettings.skybox = materials[0];
         }
         else
         {
             lightComp.intensity = 0;
+            RenderSettings.skybox = materials[1];
+
         }
 
         if (speedActive)

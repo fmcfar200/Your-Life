@@ -7,6 +7,8 @@ public class CameraScript : MonoBehaviour {
     Camera cam;
     float zoomSpeed = 0.5f;
 
+    GameObject player;
+    RaycastHit hit;
 	void Start()
     {
         target = GameObject.FindGameObjectWithTag("Player");
@@ -15,6 +17,8 @@ public class CameraScript : MonoBehaviour {
         {
             Debug.LogError("CAMERA CANNOT FIND PLAYER!");
         }
+
+        player = GameObject.FindGameObjectWithTag("Player");
 	}
 
     void Update()
@@ -51,21 +55,10 @@ public class CameraScript : MonoBehaviour {
             }
         }
 
-        /*
-        if (Input.GetMouseButton(1))
-        {
-            Vector2 mouseCurrentPos = Input.mousePosition;
-            Vector2 mouseLastPos = mouseCurrentPos;
-            Vector2 mouseDeltaPos = mouseCurrentPos - mouseLastPos;
-
-            transform.Translate(-mouseDeltaPos.x * 3.0f * Time.deltaTime, -mouseDeltaPos.y * 3.0f * Time.deltaTime, 0);
-
-            Debug.Log("true");
-
-        }
-        */
-
         Mathf.Clamp(transform.position.z, -6.0f, -9.0f);
+
+
+        
     }
 
 }

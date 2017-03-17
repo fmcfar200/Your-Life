@@ -45,7 +45,7 @@ public class GameControllerScript : MonoBehaviour {
     Button saveButton;
     Button loadButton;
 
-
+    int totalWellbeing;
 
 
     void Awake()
@@ -107,8 +107,8 @@ public class GameControllerScript : MonoBehaviour {
 
     void Update()
     {
-
-        overallWellbeing = ((healthy + active + safe + nurtured + accepted + respected + responsible + included) / 80) * 100;  
+        totalWellbeing = healthy + active + safe + nurtured + accepted + respected + responsible + included;
+        overallWellbeing = (float)totalWellbeing/80 * 100;  
         //TEMP TO QUIT
         if (Input.GetKeyDown(KeyCode.Escape))
         {
