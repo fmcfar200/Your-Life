@@ -67,11 +67,7 @@ public class UpgradeScript : MonoBehaviour {
         {
             Debug.LogError("cant find controller");
         }
-
-
-        upgradeMenu.SetActive(false);
-        
-        
+        upgradeMenu.SetActive(false);   
     }
 
     void Start()
@@ -93,10 +89,6 @@ public class UpgradeScript : MonoBehaviour {
         {
             bike.SetActive(false);
         }
-
-
-
-
     }
 
     void Update()
@@ -151,8 +143,6 @@ public class UpgradeScript : MonoBehaviour {
 
         costTextBike.text = "Cost: " + bikeCost.ToString();
         costTextCar.text = "Cost: " + carCost.ToString();
-
-
     }
 
     void UpgradeBike()
@@ -163,13 +153,8 @@ public class UpgradeScript : MonoBehaviour {
             bikeTier += 1;
             bikeUpgradeButtons[bikeTier - 1].GetComponent<Image>().color = Color.green;
             bikeUpgradeButtons[bikeTier - 1].onClick.RemoveAllListeners();
-
-          
-
         }
-
         gameController.bikeTier = bikeTier;
-        
     }
 
     void UpgradeCar()
@@ -180,13 +165,8 @@ public class UpgradeScript : MonoBehaviour {
             carTier += 1;
             carUpgradeButtons[carTier - 1].GetComponent<Image>().color = Color.green;
             carUpgradeButtons[carTier - 1].onClick.RemoveAllListeners();
-
-
-
         }
-
         gameController.carTier = carTier;
-
     }
 
     public void CloseWindow()

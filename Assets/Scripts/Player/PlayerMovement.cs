@@ -14,6 +14,12 @@ public class PlayerMovement : MonoBehaviour {
     private Vector3 firstPos;
     private Vector3 lastPos;
     private float dragDistance;
+
+    Transform modelTransform;
+    GameObject model;
+
+    Animator animator;
+
     void Start()
     {
         player = this.gameObject;
@@ -22,6 +28,15 @@ public class PlayerMovement : MonoBehaviour {
         canMove = true;
 
         dragDistance = Screen.height * 20 / 100;
+
+        //ANIMATION TESTING
+        modelTransform = transform.GetChild(1);
+        model = GameObject.Find("Knight");
+        animator = model.GetComponent<Animator>();
+        if (animator == null)
+        {
+            Debug.LogError("Animator not found!");
+        }
     }
 
 	void Update()
@@ -109,12 +124,18 @@ public class PlayerMovement : MonoBehaviour {
         if (moving)
         {
             MoveToPoint(hitPoint);
+            animator.SetBool("Moving", true);
+        }
+        else
+        {
+            animator.SetBool("Moving", false);
         }
     }
 
     void MoveToPoint(Vector3 hitPoint)
     {
         hitPoint.y = 0;
+        modelTransform.LookAt(hitPoint); //fix this
         player.transform.position = Vector3.MoveTowards(player.transform.position,hitPoint,speed*Time.deltaTime);
     }
 
