@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 
 public class PBSpawnScript : MonoBehaviour {
 
@@ -16,15 +17,44 @@ public class PBSpawnScript : MonoBehaviour {
     int wave;
     int maxWave;
     int spawnAmount;
+    int score;
 
+    GameControllerScript gameController;
+    GameObject gameControllerObj;
+
+    public Text scoreText;
+
+    int bikeTier;
 
     void Start()
     {
-        spawnDelay = 2.0f;
         spawning = true;
         wave = 0;
         maxWave = 3;
-        spawnAmount = 5;
+
+        gameControllerObj = GameObject.Find("GameController");
+        if(gameControllerObj!=null)
+        {
+            gameController = gameControllerObj.GetComponent<GameControllerScript>();
+            bikeTier = gameController.bikeTier;
+
+            if (bikeTier == 0)
+            {
+                spawnDelay = 1.75f;
+                spawnAmount = 5;
+
+            }
+            else if (bikeTier == 1)
+            {
+                spawnDelay = 1.5f;
+                spawnAmount = 8;
+            }
+            else if (bikeTier > 1)
+            {
+                spawnDelay = 1.25f;
+                spawnAmount = 10;
+            }
+        }
 
         foreach(Button button in buttons)
         {
@@ -39,8 +69,10 @@ public class PBSpawnScript : MonoBehaviour {
     {
         if (spawning == false)
         {
-            Application.LoadLevel("HomeScene");
+            SceneManager.LoadScene(1);
         }
+
+        scoreText.text = "Score: " + score.ToString();
     }
 
     IEnumerator Spawn()
@@ -63,7 +95,18 @@ public class PBSpawnScript : MonoBehaviour {
             }
             else
             {
+                if (gameController.bikeTier > 0)
+                {
+                    gameController.healthy += 2 * gameController.bikeTier;
+                    gameController.active += 2 * gameController.bikeTier;
+                }
+                else
+                {
+                    gameController.healthy += 2;
+                    gameController.active += 2;
+                }
                 spawning = false;
+
             }
         }
     }
@@ -82,58 +125,78 @@ public class PBSpawnScript : MonoBehaviour {
     {
         GameObject button = EventSystem.current.currentSelectedGameObject;
 
-        if (button.name == "UpButton")
+        if (arrow != null)
         {
-            if (arrow.name == "ArrowUp(Clone)")
+            if (button.name == "UpButton")
             {
-                Destroy(arrow);
-                Debug.Log("Correct");
+                if (arrow.name == "ArrowUp(Clone)")
+                {
+                    Destroy(arrow);
+                    AddScore();
+                    Debug.Log("Correct");
 
+                }
+                else
+                {
+                    Debug.Log("Wrong");
+                }
             }
-            else
+            else if (button.name == "DownButton")
             {
-                Debug.Log("Wrong");
-            }
-        }
-        else if (button.name == "DownButton")
-        {
-            if (arrow.name == "ArrowDown(Clone)")
-            {
-                Destroy(arrow);
-                Debug.Log("Correct");
+                if (arrow.name == "ArrowDown(Clone)")
+                {
+                    Destroy(arrow);
+                    AddScore();
+                    Debug.Log("Correct");
 
+                }
+                else
+                {
+                    Debug.Log("Wrong");
+                }
             }
-            else
+            else if (button.name == "LeftButton")
             {
-                Debug.Log("Wrong");
-            }
-        }
-        else if (button.name == "LeftButton")
-        {
-            if (arrow.name == "ArrowLeft(Clone)")
-            {
-                Destroy(arrow);
-                Debug.Log("Correct");
+                if (arrow.name == "ArrowLeft(Clone)")
+                {
+                    Destroy(arrow);
+                    AddScore();
+                    Debug.Log("Correct");
 
+                }
+                else
+                {
+                    Debug.Log("Wrong");
+                }
             }
-            else
+            else if (button.name == "RightButton")
             {
-                Debug.Log("Wrong");
-            }
-        }
-        else if (button.name == "RightButton")
-        {
-            if (arrow.name == "ArrowRight(Clone)")
-            {
-                Destroy(arrow);
-                Debug.Log("Correct");
+                if (arrow.name == "ArrowRight(Clone)")
+                {
+                    Destroy(arrow);
+                    AddScore();
+                    Debug.Log("Correct");
 
+                }
+                else
+                {
+                    Debug.Log("Wrong");
+                }
             }
-            else
-            {
-                Debug.Log("Wrong");
-            }
+
+
         }
+    }
+
+    void AddScore()
+    {
+        score += 10;
+        gameController.playerScore += score;
+    }
+
+    public void Return()
+    {
+        SceneManager.LoadScene(1);
     }
 
 }

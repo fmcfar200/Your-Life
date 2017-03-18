@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/PaperboyScene.unity
+- path: Assets/Scenes/LoadingScene.unity
   isLoaded: 1
   isActive: 1

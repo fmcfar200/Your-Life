@@ -45,13 +45,19 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\ItemScript.cs" />
-     <Compile Include="Assets\MenuManagerScript.cs" />
-     <Compile Include="Assets\MissionManagerScript.cs" />
-     <Compile Include="Assets\Scripts\CameraScript.cs" />
-     <Compile Include="Assets\Scripts\PlayerInformationScript.cs" />
-     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
-     <Compile Include="Assets\Scripts\TimeCycleScript.cs" />
+     <Compile Include="Assets\LoadScene.cs" />
+     <Compile Include="Assets\Scripts\Camera\CameraScript.cs" />
+     <Compile Include="Assets\Scripts\ItemScript.cs" />
+     <Compile Include="Assets\Scripts\Managers\GameControllerScript.cs" />
+     <Compile Include="Assets\Scripts\Managers\MenuManagerScript.cs" />
+     <Compile Include="Assets\Scripts\Managers\MissionManagerScript.cs" />
+     <Compile Include="Assets\Scripts\Managers\TimeCycleScript.cs" />
+     <Compile Include="Assets\Scripts\PaperboyGame\ArrowScript.cs" />
+     <Compile Include="Assets\Scripts\PaperboyGame\PBSpawnScript.cs" />
+     <Compile Include="Assets\Scripts\PaperboyGame\PaperObjectScript.cs" />
+     <Compile Include="Assets\Scripts\PaperboyGame\PaperboyPlayerScript.cs" />
+     <Compile Include="Assets\Scripts\Player\PlayerInformationScript.cs" />
+     <Compile Include="Assets\Scripts\Player\PlayerMovement.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

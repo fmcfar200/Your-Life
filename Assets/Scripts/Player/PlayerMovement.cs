@@ -21,33 +21,12 @@ public class PlayerMovement : MonoBehaviour {
         moving = false;
         canMove = true;
 
-        dragDistance = Screen.height * 15 / 100;
+        dragDistance = Screen.height * 20 / 100;
     }
 
 	void Update()
     {
-        if (!UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject())
-        {
-            if (Input.GetMouseButtonDown(0))
-            {
-                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-                RaycastHit hit;
-                if (Physics.Raycast(ray, out hit, 100.0f))
-                {
-                    if (hit.collider.tag == "Ground")
-                    {
-                        hitPoint = hit.point;
-                        moving = true;
-                    }
-                    if (hit.collider.tag == "Mission Item")
-                    {
-                        hit.collider.GetComponent<ItemScript>().ClickedOnObject();
-                    }
-                }
-            }
-        }
-
-    
+       
 
         if (Input.touchCount > 0)
         {
@@ -78,6 +57,29 @@ public class PlayerMovement : MonoBehaviour {
                 }
             }
         }
+        else
+        {
+            if (!UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject())
+            {
+                if (Input.GetMouseButtonDown(0))
+                {
+                    Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+                    RaycastHit hit;
+                    if (Physics.Raycast(ray, out hit, 100.0f))
+                    {
+                        if (hit.collider.tag == "Ground")
+                        {
+                            hitPoint = hit.point;
+                            moving = true;
+                        }
+                        if (hit.collider.tag == "Mission Item")
+                        {
+                            hit.collider.GetComponent<ItemScript>().ClickedOnObject();
+                        }
+                    }
+                }
+            }
+        }
 
         //checks if the input pointer is over a GO instead of a UI object
         
@@ -87,8 +89,7 @@ public class PlayerMovement : MonoBehaviour {
                 RaycastHit hit;
                 if (Physics.Raycast(ray, out hit, 100.0f))
                 {
-                        //FIX THIS.NOT WORKING
-                    if (EventSystem.current.IsPointerOverGameObject(Input.GetTouch(0).fingerId))
+                    if (!EventSystem.current.IsPointerOverGameObject(Input.GetTouch(0).fingerId))
                     {
                         if (hit.collider.tag == "Ground" && canMove)
                         {

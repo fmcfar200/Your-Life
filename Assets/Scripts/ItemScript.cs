@@ -1,24 +1,24 @@
 ﻿using UnityEngine;
-using System.Collections;
 using UnityEngine.UI;
 
 public class ItemScript : MonoBehaviour {
 
     bool clicked;
     bool promptOpen;
+    GameObject clickedItem;
 
-    GameObject quickPrompt;
+    public GameObject quickPrompt;
+    public GameObject upgradeMenu;
+
     Text promptTitle;
     Text promptDesc;
     Button yesButton;
     Button noButton;
 
 
-    void Start()
+    void Awake()
     {
         clicked = false;
-        promptOpen = false;
-
         quickPrompt = GameObject.Find("Quick_Prompt");
         if (quickPrompt != null)
         {
@@ -34,42 +34,52 @@ public class ItemScript : MonoBehaviour {
         }
     }
 
+    void Start()
+    {
+        quickPrompt.SetActive(false);
+    }
+
     void Update()
     {
+
         if (clicked == true)
         {
-            if (this.gameObject.tag == "Mission Item")
+
+            if (gameObject.tag == "Mission Item")
             {
-               
-                    if (gameObject.name == "Newspaper_Item")
-                    {
-                        promptOpen = true;
-                        promptTitle.text = "Paper Boy/Girl Wanted!";
-                        promptDesc.text = "The local newspaper is looking for a new paper boy/girl. Would you like to apply?";
-
-                        yesButton.onClick.AddListener(()=>YesClick());
-                        noButton.onClick.AddListener(() => NoClick());
-                    }
-                }
-                else
+                
+                if (gameObject.name == "Bike")
                 {
-                    Debug.LogError("MANAGER NOT FOUND!");
+                    quickPrompt.SetActive(true);
+                    promptTitle.text = "Bike Ride!";
+                    promptDesc.text = "Playing this game will increase your Active and Health stats. Would you like to begin?";
+                    yesButton.onClick.AddListener(() => YesClick());
+                    noButton.onClick.AddListener(() => NoClick());
                 }
-                clicked = false;
-            
 
-        }
+                if (gameObject.name == "Car")
+                {
+                    quickPrompt.SetActive(true);
+                    promptTitle.text = "Car";
+                    promptDesc.text = "Playing this game will increase your Responsible and Respectful stats. Would you like to begin?";
+                    yesButton.onClick.AddListener(() => YesClick());
+                    noButton.onClick.AddListener(() => NoClick());
+                }
 
-        if (promptOpen == true)
-        {
-            quickPrompt.SetActive(true);
-            Time.timeScale = 0;
+                if (gameObject.name == "TV")
+                {
+                    upgradeMenu.SetActive(true);
+                }
+            }
+            else
+            {
+                Debug.LogError("MANAGER NOT FOUND!");
+            }
+            clicked = false;
         }
-        else
-        {
-            Time.timeScale = 1;
-            quickPrompt.SetActive(false);
-        }
+        
+       
+        
     }
 
     public void ClickedOnObject()
@@ -85,23 +95,34 @@ public class ItemScript : MonoBehaviour {
         if (manager != null)
         {
             missionManager = manager.GetComponent<MissionManagerScript>();
-            if (gameObject.name == "Newspaper_Item")
+            
+            if (gameObject.name == "Bike")
             {
-                this.GetComponent<BoxCollider>().enabled = false;
-                missionManager.GetNewJob();
 
                 promptOpen = false;
                 quickPrompt.SetActive(false);
                 promptDesc.text = null;
                 promptTitle.text = null;
 
-                missionManager.currentMission++;
+                Application.LoadLevel("BikeRide");
+
+            }
+            if (gameObject.name == "Car")
+            {
+
+                promptOpen = false;
+                quickPrompt.SetActive(false);
+                promptDesc.text = null;
+                promptTitle.text = null;
+
+                Application.LoadLevel("CarRide");
+
             }
         }
     }
 
     void NoClick()
     {
-        promptOpen = false;
+        quickPrompt.SetActive(false);
     }
 }
