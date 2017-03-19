@@ -64,6 +64,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\AnimationScript.cs" />
+    <Compile Include="Assets\MoveMotionPack\SampleScene\Scripts\PlayManager.cs" />
     <Compile Include="Assets\Scripts\Camera\CameraScript.cs" />
     <Compile Include="Assets\Scripts\CarRide\CarMovement.cs" />
     <Compile Include="Assets\Scripts\CarRide\CarSpawnScript.cs" />

@@ -15,11 +15,8 @@ public class PlayerMovement : MonoBehaviour {
     private Vector3 lastPos;
     private float dragDistance;
 
-    Transform modelTransform;
-    GameObject model;
-
     Animator animator;
-
+    Transform playerModelP;
     void Start()
     {
         player = this.gameObject;
@@ -30,19 +27,23 @@ public class PlayerMovement : MonoBehaviour {
         dragDistance = Screen.height * 20 / 100;
 
         //ANIMATION TESTING
-        modelTransform = transform.GetChild(1);
-        model = GameObject.Find("Knight");
-        animator = model.GetComponent<Animator>();
+        animator = GetComponent<Animator>();
+        playerModelP = transform.GetChild(1).GetComponent<Transform>();
         if (animator == null)
         {
             Debug.LogError("Animator not found!");
+        }
+
+        if (playerModelP!=null)
+        {
+            Debug.Log(playerModelP.gameObject.name);
         }
     }
 
 	void Update()
     {
-       
 
+        Mathf.Clamp(player.transform.position.y, 0, 0);
         if (Input.touchCount > 0)
         {
             Touch touch = Input.GetTouch(0);
@@ -135,7 +136,7 @@ public class PlayerMovement : MonoBehaviour {
     void MoveToPoint(Vector3 hitPoint)
     {
         hitPoint.y = 0;
-        modelTransform.LookAt(hitPoint); //fix this
+        playerModelP.LookAt(hitPoint); //fix this
         player.transform.position = Vector3.MoveTowards(player.transform.position,hitPoint,speed*Time.deltaTime);
     }
 
