@@ -6,11 +6,23 @@ public class CarMovement : MonoBehaviour
 {
 
     GameObject car;
+    GameObject spawnManager;
+    CarSpawnScript spawnScript;
 
 
     void Start()
     {
         car = this.gameObject;
+
+        spawnManager = GameObject.Find("SpawnManager");
+        if (spawnManager != null)
+        {
+            spawnScript = spawnManager.GetComponent<CarSpawnScript>();
+        }
+        else
+        {
+            Debug.Log("Spawn manager not found");
+        }
     }
 
     void Update()
@@ -54,6 +66,14 @@ public class CarMovement : MonoBehaviour
                     }
                 }
             }
+        }
+    }
+
+    void OnCollisionEnter(Collision coll)
+    {
+        if (coll.collider.tag == "PedCar")
+        {
+            spawnScript.GameOver();
         }
     }
 

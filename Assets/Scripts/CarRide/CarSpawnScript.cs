@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class CarSpawnScript : MonoBehaviour {
 
@@ -13,20 +14,26 @@ public class CarSpawnScript : MonoBehaviour {
     int wave;
     int maxWave;
     int spawnAmount;
-    int score;
+    int scoreReward;
 
     GameObject gameControllerObj;
     GameControllerScript gameController;
 
     int carTier;
 
+    public Text message_Text;
+    public Text reward_Text;
+    public GameObject finish_Panel;
 
     void Start()
     {
+        scoreReward = 0;
         spawning = true;
         wave = 0;
         maxWave = 3;
+        finish_Panel.SetActive(false);
 
+        
         gameControllerObj = GameObject.Find("GameController");
         if (gameControllerObj != null)
         {
@@ -58,7 +65,7 @@ public class CarSpawnScript : MonoBehaviour {
     {
         if (spawning == false)
         {
-            SceneManager.LoadScene(1);
+            Complete();
         }
     }
 
@@ -72,8 +79,8 @@ public class CarSpawnScript : MonoBehaviour {
             {
                 for (int i = 0; i < spawnAmount; i++)
                 {
-                    Instantiate(cars[Random.Range(0, cars.Count)], spawns[Random.Range(0, spawns.Count)].transform.position, Quaternion.identity);
-
+                    GameObject pedCar = Instantiate(cars[Random.Range(0, cars.Count)], spawns[Random.Range(0, spawns.Count)].transform.position, Quaternion.identity) as GameObject;
+                    pedCar.tag = "PedCar";
                     yield return new WaitForSeconds(spawnDelay);
                 }
                 wave++;
@@ -86,16 +93,49 @@ public class CarSpawnScript : MonoBehaviour {
                 {
                     gameController.respected += 2 * gameController.carTier;
                     gameController.responsible += 2 * gameController.carTier;
+
+                    scoreReward += 350 * gameController.carTier;
                 }
                 else
                 {
                     gameController.respected += 2;
                     gameController.responsible += 2;
+                    scoreReward += 350;
+
                 }
                 spawning = false;
-
+              
             }
         }
-        }
+    }
+
+   
+
+    public void GameOver()
+    {
+        finish_Panel.SetActive(true);
+        Time.timeScale = 0;
+        scoreReward = 100;
+        message_Text.text = "Game Over!";
+        reward_Text.text = "Score: +" + scoreReward.ToString();
+    }
+
+    void Complete()
+    {
+        Time.timeScale = 0;
+        finish_Panel.SetActive(true);
+
+        message_Text.text = "Level Complete!";
+        reward_Text.text = "Score: +" + scoreReward.ToString();
+
+    }
+
+    public void ReturnHome()
+    {
+        gameController.playerScore += scoreReward;
+        SceneManager.LoadScene(1);
+    }
  }
+
+
 

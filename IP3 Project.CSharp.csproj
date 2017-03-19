@@ -69,6 +69,7 @@
     <Compile Include="Assets\Scripts\CarRide\CarMovement.cs" />
     <Compile Include="Assets\Scripts\CarRide\CarSpawnScript.cs" />
     <Compile Include="Assets\Scripts\CarRide\PedCarScript.cs" />
+    <Compile Include="Assets\Scripts\Health.cs" />
     <Compile Include="Assets\Scripts\ItemScript.cs" />
     <Compile Include="Assets\Scripts\Managers\GameControllerScript.cs" />
     <Compile Include="Assets\Scripts\Managers\LoadScene.cs" />
