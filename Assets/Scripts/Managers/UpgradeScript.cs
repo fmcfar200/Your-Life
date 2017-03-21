@@ -34,6 +34,7 @@ public class UpgradeScript : MonoBehaviour {
     int bikeCost;
     int carCost;
 
+    SoundEffects SFX;
 
     void Awake()
     {
@@ -53,6 +54,8 @@ public class UpgradeScript : MonoBehaviour {
             {
                 Debug.LogError("No car!!!");
             }
+
+            SFX = GameObject.Find("SFXManager").GetComponent<SoundEffects>();
            
         }
 
@@ -153,6 +156,7 @@ public class UpgradeScript : MonoBehaviour {
             bikeTier += 1;
             bikeUpgradeButtons[bikeTier - 1].GetComponent<Image>().color = Color.green;
             bikeUpgradeButtons[bikeTier - 1].onClick.RemoveAllListeners();
+            SFX.PlaySound("Upgrade");
         }
         gameController.bikeTier = bikeTier;
     }
@@ -165,6 +169,9 @@ public class UpgradeScript : MonoBehaviour {
             carTier += 1;
             carUpgradeButtons[carTier - 1].GetComponent<Image>().color = Color.green;
             carUpgradeButtons[carTier - 1].onClick.RemoveAllListeners();
+            SFX.PlaySound("Upgrade");
+
+
         }
         gameController.carTier = carTier;
     }

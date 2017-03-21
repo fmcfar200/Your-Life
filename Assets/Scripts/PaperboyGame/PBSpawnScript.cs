@@ -17,7 +17,7 @@ public class PBSpawnScript : MonoBehaviour {
     int wave;
     int maxWave;
     int spawnAmount;
-    int score;
+    public int score;
 
     GameControllerScript gameController;
     GameObject gameControllerObj;
@@ -25,6 +25,11 @@ public class PBSpawnScript : MonoBehaviour {
     public Text scoreText;
 
     int bikeTier;
+
+    public GameObject finishPanel;
+    Text messageText;
+    Text rewardText;
+
 
     void Start()
     {
@@ -61,6 +66,16 @@ public class PBSpawnScript : MonoBehaviour {
             button.onClick.AddListener(() => ButtonClick());
         }
 
+        if (finishPanel != null)
+        {
+            finishPanel.SetActive(false);
+
+            messageText = finishPanel.transform.GetChild(0).GetComponent<Text>();
+            rewardText = finishPanel.transform.GetChild(1).GetComponent<Text>();
+
+           
+        }
+
         StartCoroutine(Spawn());
 
     }
@@ -69,7 +84,7 @@ public class PBSpawnScript : MonoBehaviour {
     {
         if (spawning == false)
         {
-            SceneManager.LoadScene(1);
+            Complete();
         }
 
         scoreText.text = "Score: " + score.ToString();
@@ -116,6 +131,16 @@ public class PBSpawnScript : MonoBehaviour {
         if (coll.tag == "Arrow")
         {
             arrow = coll.gameObject;
+
+
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D coll)
+    {
+        if (coll.tag == "Arrow")
+        {
+            arrow = null;
 
 
         }
@@ -190,7 +215,7 @@ public class PBSpawnScript : MonoBehaviour {
 
     void AddScore()
     {
-        score += 10;
+        score += 10 * (bikeTier + 1);
         gameController.playerScore += score;
     }
 
@@ -199,4 +224,19 @@ public class PBSpawnScript : MonoBehaviour {
         SceneManager.LoadScene(1);
     }
 
+    void Complete()
+    {
+        if (rewardText != null && messageText != null)
+        {
+            messageText.text = "Complete!";
+            rewardText.text = "Score: + " + score;
+        }
+        else
+        {
+            Debug.LogError("text not found");
+        }
+
+        Time.timeScale = 0;
+        finishPanel.SetActive(true);
+    }
 }

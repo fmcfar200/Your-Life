@@ -9,11 +9,25 @@ public class Health : MonoBehaviour {
 
     public Text healthText;
     public GameObject gOverPanel;
+    Text messageText;
+    Text rewardText;
+    PBSpawnScript spawner;
 
     void Start()
     {
         health = 3;
-        gOverPanel.SetActive(false);
+
+        spawner = GameObject.Find("SpawnManager").GetComponent<PBSpawnScript>();
+       
+        if (gOverPanel != null)
+        {
+            messageText = gOverPanel.transform.GetChild(0).GetComponent<Text>();
+            rewardText = gOverPanel.transform.GetChild(1).GetComponent<Text>();
+            gOverPanel.SetActive(false);
+
+
+        }
+
     }
     void Update()
     {
@@ -27,6 +41,8 @@ public class Health : MonoBehaviour {
 
     void GameOver()
     {
+        messageText.text = "Game Over!";
+        rewardText.text = "Score: + " + spawner.score;
         Time.timeScale = 0;
         gOverPanel.SetActive(true);
     }
