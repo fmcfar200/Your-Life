@@ -7,7 +7,7 @@ public class SoundEffects : MonoBehaviour {
     public AudioClip activate;
     public AudioClip timeButton;
     public AudioClip UIClick;
-
+    public AudioClip cash;
     AudioSource source;
 
     void Start()
@@ -32,6 +32,11 @@ public class SoundEffects : MonoBehaviour {
         else if (type == "Time")
         {
             source.PlayOneShot(timeButton);
+        }
+        else if (type == "Cash")
+        {
+            source.PlayOneShot(cash);
+
         }
     }
 }

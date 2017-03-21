@@ -32,6 +32,10 @@ public class TimeCycleScript : MonoBehaviour {
 
     public List<Material> materials = new List<Material>();
 
+    float overallWellbeing;
+    int scoreReward = 2500;
+    bool rewardActive = true;
+    SoundEffects soundEffects;
 
     void Start()
     {
@@ -47,7 +51,14 @@ public class TimeCycleScript : MonoBehaviour {
             gameController = gameControllerObj.GetComponent<GameControllerScript>();
             currentDay = gameController.day;
             hour = gameController.hour;
+            overallWellbeing = gameController.overallWellbeing;
 
+        }
+
+        soundEffects = GameObject.Find("SFXManager").GetComponent<SoundEffects>();
+        if (soundEffects == null)
+        {
+            Debug.LogError("SFX not found");
         }
 
     }
@@ -117,9 +128,23 @@ public class TimeCycleScript : MonoBehaviour {
             speedUp = 1;
         }
 
+        if (hour == 0 && rewardActive == true)
+        {
+           GiveDailyReward();
+        }
+        else if (hour == 1)
+        {
+            rewardActive = true;
+        }
+
+        
+      
+
         gameController.hour = hour;
         gameController.day = currentDay;
-        
+
+        overallWellbeing = gameController.overallWellbeing;
+
 
     }
 
@@ -134,6 +159,17 @@ public class TimeCycleScript : MonoBehaviour {
         {
             speedActive = true;
         }
+    }
+
+    void GiveDailyReward()
+    {
+        int OWint = (int)overallWellbeing;
+        int reward = scoreReward * OWint/500;
+
+        gameController.playerScore += reward;
+        rewardActive = false;
+        soundEffects.PlaySound("Cash");
+        Debug.Log(reward);
     }
 
     
