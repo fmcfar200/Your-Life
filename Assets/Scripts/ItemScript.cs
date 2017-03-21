@@ -15,9 +15,13 @@ public class ItemScript : MonoBehaviour {
     Button yesButton;
     Button noButton;
 
-
+    GameObject SFXManager;
+    SoundEffects soundEffects;
+    
+    
     void Awake()
     {
+       
         clicked = false;
         quickPrompt = GameObject.Find("Quick_Prompt");
         if (quickPrompt != null)
@@ -31,6 +35,16 @@ public class ItemScript : MonoBehaviour {
         {
             Debug.LogError("QP not found !!");
 
+        }
+
+        SFXManager = GameObject.Find("SFXManager");
+        if (SFXManager != null)
+        {
+            soundEffects = SFXManager.GetComponent<SoundEffects>();
+        }
+        else
+        {
+            Debug.Log("sfx manager not found");
         }
     }
 
@@ -47,7 +61,7 @@ public class ItemScript : MonoBehaviour {
 
             if (gameObject.tag == "Mission Item")
             {
-                
+                soundEffects.PlaySound("Select");
                 if (gameObject.name == "Bike")
                 {
                     quickPrompt.SetActive(true);
@@ -90,6 +104,7 @@ public class ItemScript : MonoBehaviour {
 
     void YesClick()
     {
+        soundEffects.PlaySound("Activate");
         MissionManagerScript missionManager;
         GameObject manager = GameObject.Find("MenuManager");
         if (manager != null)
@@ -124,5 +139,6 @@ public class ItemScript : MonoBehaviour {
     void NoClick()
     {
         quickPrompt.SetActive(false);
+        soundEffects.PlaySound("UI");
     }
 }
