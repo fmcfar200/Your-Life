@@ -48,12 +48,12 @@ public class CarSpawnScript : MonoBehaviour {
             }
             else if (carTier == 1)
             {
-                spawnDelay = 1.5f;
+                spawnDelay = 1;
                 spawnAmount = 8;
             }
             else if (carTier > 1)
             {
-                spawnDelay = 1.25f;
+                spawnDelay = 0.75f;
                 spawnAmount = 10;
             }
         }
@@ -65,7 +65,17 @@ public class CarSpawnScript : MonoBehaviour {
     {
         if (spawning == false)
         {
-            Complete();
+            GameObject[] cars = GameObject.FindGameObjectsWithTag("PedCar");
+            int carCount = 0;
+            foreach (GameObject car in cars)
+            {
+                carCount++;
+            }
+
+            if (carCount == 0)
+            {
+                Complete();
+            }
         }
     }
 
