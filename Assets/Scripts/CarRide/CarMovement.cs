@@ -9,7 +9,8 @@ public class CarMovement : MonoBehaviour
     GameObject spawnManager;
     CarSpawnScript spawnScript;
 
-
+    public GameObject shield;
+    bool shieldActive = false;
     void Start()
     {
         car = this.gameObject;
@@ -23,6 +24,9 @@ public class CarMovement : MonoBehaviour
         {
             Debug.Log("Spawn manager not found");
         }
+
+        shieldActive = false;
+       
     }
 
     void Update()
@@ -67,13 +71,48 @@ public class CarMovement : MonoBehaviour
                 }
             }
         }
+
+        switch(shieldActive)
+        {
+            case true:
+                shield.SetActive(true);
+                break;
+            case false:
+                shield.SetActive(false);
+
+                break;
+
+        }
     }
 
     void OnCollisionEnter(Collision coll)
     {
         if (coll.collider.tag == "PedCar")
         {
-            spawnScript.GameOver();
+            if (shieldActive == true)
+            {
+                Destroy(coll.gameObject);
+                shieldActive = false;
+            }
+            else
+            {
+                spawnScript.GameOver();
+            }
+        }
+    }
+
+    void OnTriggerEnter(Collider coll)
+    {
+        if (coll.gameObject.tag == "Shield")
+        {
+            shieldActive = true;
+            Destroy(coll.gameObject);
+        }
+        else if (coll.gameObject.tag == "Multiplier")
+        {
+            spawnScript.scoreReward += 250;
+            Destroy(coll.gameObject);
+
         }
     }
 

@@ -30,12 +30,16 @@ public class PBSpawnScript : MonoBehaviour {
     Text messageText;
     Text rewardText;
 
+    public int streak;
+    int combo;
 
     void Start()
     {
         spawning = true;
         wave = 0;
         maxWave = 3;
+        combo = 1;
+        streak = 0;
 
         gameControllerObj = GameObject.Find("GameController");
         if(gameControllerObj!=null)
@@ -88,6 +92,23 @@ public class PBSpawnScript : MonoBehaviour {
         }
 
         scoreText.text = "Score: " + score.ToString();
+
+        if (streak >= 10 && streak <= 19)
+        {
+            combo = 2;
+        }
+        else if (streak >= 20 && streak <= 29)
+        {
+            combo = 3;
+        }
+        else if (streak >= 30)
+        {
+            combo = 4;
+        }
+        else
+        {
+            combo = 1;
+        }
     }
 
     IEnumerator Spawn()
@@ -164,6 +185,8 @@ public class PBSpawnScript : MonoBehaviour {
                 else
                 {
                     Debug.Log("Wrong");
+                    streak = 0;
+
                 }
             }
             else if (button.name == "DownButton")
@@ -178,6 +201,8 @@ public class PBSpawnScript : MonoBehaviour {
                 else
                 {
                     Debug.Log("Wrong");
+                    streak = 0;
+
                 }
             }
             else if (button.name == "LeftButton")
@@ -192,6 +217,8 @@ public class PBSpawnScript : MonoBehaviour {
                 else
                 {
                     Debug.Log("Wrong");
+                    streak = 0;
+
                 }
             }
             else if (button.name == "RightButton")
@@ -206,6 +233,7 @@ public class PBSpawnScript : MonoBehaviour {
                 else
                 {
                     Debug.Log("Wrong");
+                    streak = 0;
                 }
             }
 
@@ -215,7 +243,8 @@ public class PBSpawnScript : MonoBehaviour {
 
     void AddScore()
     {
-        score += 10 * (bikeTier + 1);
+        streak++;
+        score += (10 * (bikeTier + 1)) * combo;
         gameController.playerScore += score;
     }
 
