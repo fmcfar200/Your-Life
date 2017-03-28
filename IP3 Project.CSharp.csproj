@@ -64,6 +64,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\FishMovement.cs" />
+    <Compile Include="Assets\FishSpawnScript.cs" />
     <Compile Include="Assets\Resources\GemExample\Scripts\Orbit.cs" />
     <Compile Include="Assets\Scripts\AnimationScript.cs" />
     <Compile Include="Assets\Scripts\Camera\CameraScript.cs" />

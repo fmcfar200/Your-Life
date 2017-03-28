@@ -12,6 +12,7 @@ public class FishMovement : MonoBehaviour {
 
     int minDistance = 1;
 
+    public int score;
 
     void Awake()
     {
@@ -53,7 +54,25 @@ public class FishMovement : MonoBehaviour {
 
         }
         lastPosX = posX;
+    }
 
+    void OnTriggerEnter2D(Collider2D coll)
+    {
+        if (coll.gameObject.tag == "FishFood")
+        {
+            Destroy(coll.gameObject);
+        }
+        else if (coll.gameObject.tag == "Obstacle")
+        {
+          
+            Destroy(gameObject);
+            
+        }
+    }
 
+    void AddScore()
+    {
+        score += 10;
+        //gameController.playerScore += score;
     }
 }
