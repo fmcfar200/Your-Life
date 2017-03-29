@@ -2,8 +2,11 @@
 using System.Collections;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System.Collections.Generic;
 
 public class FishSpawnScript : MonoBehaviour {
+
+    GameObject player;
 
     bool spawning;
     int wave;
@@ -14,18 +17,17 @@ public class FishSpawnScript : MonoBehaviour {
 
     public GameObject foodPref;
     public GameObject obstaclePref;
-
-    Color color;
-
+    public List<Transform> obstacleSpawns = new List<Transform>();
+    public List<GameObject> powers = new List<GameObject>();
     public GameObject finishPanel;
     Text messageText;
     Text rewardText;
 
-    int score;
+    GameControllerScript gameController;
 
     void Start()
     {
-        score = 0;
+        player = GameObject.FindGameObjectWithTag("Player");
         spawning = true;
         wave = 0;
         maxWave = 5;
@@ -42,18 +44,22 @@ public class FishSpawnScript : MonoBehaviour {
 
         }
 
+        gameController = GameObject.Find("GameController").GetComponent<GameControllerScript>();
+        if (gameController == null)
+        {
+            Debug.LogError("Game Controller not found !!!!");
+        }
+
         StartCoroutine(Spawn());
     }
 
     void Update()
     {
-
         if (spawning == false)
         {
             Complete();
         }
-        color = new Vector4(Random.Range(0, 225), 
-            Random.Range(0, 225), Random.Range(0, 225), 225);
+       
     }
 
     IEnumerator Spawn()
@@ -67,14 +73,11 @@ public class FishSpawnScript : MonoBehaviour {
                 for (int i = 0; i < spawnAmount; i++)
                 {
                     GameObject food = Instantiate(foodPref, Random.insideUnitCircle * spawnRange, Quaternion.identity) as GameObject;
-                    food.tag = "FishFood";
-                    food.GetComponent<SpriteRenderer>().color = color;
-
+                    SpawnRandomPower();
                     int randomObstacleInt = Random.Range(-1, 1);
                     if (randomObstacleInt >= 0)
                     {
-                        GameObject obstacle = Instantiate(obstaclePref, Random.insideUnitCircle * spawnRange, Quaternion.identity) as GameObject;
-
+                        SpawnObs();
                     }
 
                     yield return new WaitForSeconds(spawnDelay);
@@ -86,22 +89,40 @@ public class FishSpawnScript : MonoBehaviour {
             }
             else
             {
-                /*
-                if (gameController.bikeTier > 0)
+                
+                if (gameController.fishTier > 0)
                 {
-                    gameController.healthy += 2 * gameController.bikeTier;
-                    gameController.active += 2 * gameController.bikeTier;
+                    gameController.healthy += 2 * gameController.fishTier;
+                    gameController.active += 2 * gameController.fishTier;
                 }
                 else
                 {
-                    gameController.healthy += 2;
-                    gameController.active += 2;
+                    gameController.nurtured += 2;
+                    gameController.safe += 2;
                 }
-                */
+                
                 spawning = false;
 
             }
         }
+    }
+
+    void SpawnObs()
+    {
+        GameObject obstacle = Instantiate(obstaclePref, obstacleSpawns[Random.Range(0,obstacleSpawns.Count)].position, Quaternion.identity) as GameObject;
+    }
+
+    void SpawnRandomPower()
+    {
+        int randomChanceInt = Random.Range(-1, 1);
+
+        if (randomChanceInt >= 0)
+        {
+            GameObject power = Instantiate(powers[Random.Range(0,powers.Count)], Random.insideUnitCircle * spawnRange, Quaternion.identity) as GameObject;
+
+        }
+
+
     }
 
     void Complete()
@@ -109,7 +130,23 @@ public class FishSpawnScript : MonoBehaviour {
         if (rewardText != null && messageText != null)
         {
             messageText.text = "Complete!";
-            rewardText.text = "Score: + " + score;
+            rewardText.text = "Score: + " + player.GetComponent<FishPlayerScript>().score;
+        }
+        else
+        {
+            Debug.LogError("text not found");
+        }
+
+        Time.timeScale = 0;
+        finishPanel.SetActive(true);
+    }
+
+    public void GameOver()
+    {
+        if (rewardText != null && messageText != null)
+        {
+            messageText.text = "Game Over!";
+            rewardText.text = "Score: + " + player.GetComponent<FishPlayerScript>().score;
         }
         else
         {

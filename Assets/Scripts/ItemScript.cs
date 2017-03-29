@@ -84,6 +84,15 @@ public class ItemScript : MonoBehaviour {
                 {
                     upgradeMenu.SetActive(true);
                 }
+
+                if (gameObject.name == "Fish Tank")
+                {
+                    quickPrompt.SetActive(true);
+                    promptTitle.text = "Fish Feed";
+                    promptDesc.text = "Playing this game will increase your Safe and Nurturing stats. Would you like to begin?";
+                    yesButton.onClick.AddListener(() => YesClick());
+                    noButton.onClick.AddListener(() => NoClick());
+                }
             }
             else
             {
@@ -131,6 +140,17 @@ public class ItemScript : MonoBehaviour {
                 promptTitle.text = null;
 
                 Application.LoadLevel("CarRide");
+
+            }
+            if (gameObject.name == "Fish Tank")
+            {
+
+                promptOpen = false;
+                quickPrompt.SetActive(false);
+                promptDesc.text = null;
+                promptTitle.text = null;
+
+                Application.LoadLevel("FishFeeder");
 
             }
         }

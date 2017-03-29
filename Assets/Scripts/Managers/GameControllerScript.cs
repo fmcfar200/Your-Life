@@ -31,6 +31,7 @@ public class GameControllerScript : MonoBehaviour {
     [Header("Upgrade Data")]
     public int bikeTier;
     public int carTier;
+    public int fishTier;
 
     //scripts
     PlayerInformationScript playerInfo;
@@ -64,6 +65,8 @@ public class GameControllerScript : MonoBehaviour {
 
         bikeTier = 0;
         carTier = 0;
+        fishTier = 0;
+
     }
 
     void Start()
