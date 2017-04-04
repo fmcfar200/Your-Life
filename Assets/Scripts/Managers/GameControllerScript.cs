@@ -48,6 +48,7 @@ public class GameControllerScript : MonoBehaviour {
 
     int totalWellbeing;
 
+    public bool pulse;
 
     void Awake()
     {
@@ -66,6 +67,8 @@ public class GameControllerScript : MonoBehaviour {
         bikeTier = 0;
         carTier = 0;
         fishTier = 0;
+
+        pulse = true;
 
     }
 

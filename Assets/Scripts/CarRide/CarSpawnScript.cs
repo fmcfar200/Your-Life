@@ -115,6 +115,7 @@ public class CarSpawnScript : MonoBehaviour {
                     scoreReward += 350;
 
                 }
+                gameController.pulse = true;
                 spawning = false;
               
             }

@@ -63,30 +63,31 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\FishPlayerScript.cs" />
-    <Compile Include="Assets\FishSpawnScript.cs" />
     <Compile Include="Assets\Resources\GemExample\Scripts\Orbit.cs" />
     <Compile Include="Assets\Scripts\AnimationScript.cs" />
     <Compile Include="Assets\Scripts\Camera\CameraScript.cs" />
     <Compile Include="Assets\Scripts\CarRide\CarMovement.cs" />
     <Compile Include="Assets\Scripts\CarRide\CarSpawnScript.cs" />
     <Compile Include="Assets\Scripts\CarRide\PedCarScript.cs" />
+    <Compile Include="Assets\Scripts\ColourPulse.cs" />
+    <Compile Include="Assets\Scripts\FishFeed\FishPlayerScript.cs" />
+    <Compile Include="Assets\Scripts\FishFeed\FishSpawnScript.cs" />
     <Compile Include="Assets\Scripts\Health.cs" />
     <Compile Include="Assets\Scripts\ItemScript.cs" />
     <Compile Include="Assets\Scripts\Managers\GameControllerScript.cs" />
     <Compile Include="Assets\Scripts\Managers\LoadScene.cs" />
     <Compile Include="Assets\Scripts\Managers\MenuManagerScript.cs" />
     <Compile Include="Assets\Scripts\Managers\MissionManagerScript.cs" />
+    <Compile Include="Assets\Scripts\Managers\MusicManager.cs" />
+    <Compile Include="Assets\Scripts\Managers\SoundEffects.cs" />
     <Compile Include="Assets\Scripts\Managers\TimeCycleScript.cs" />
     <Compile Include="Assets\Scripts\Managers\UpgradeScript.cs" />
-    <Compile Include="Assets\Scripts\MusicManager.cs" />
     <Compile Include="Assets\Scripts\PaperboyGame\ArrowScript.cs" />
     <Compile Include="Assets\Scripts\PaperboyGame\PBSpawnScript.cs" />
     <Compile Include="Assets\Scripts\PaperboyGame\PaperObjectScript.cs" />
     <Compile Include="Assets\Scripts\PaperboyGame\PaperboyPlayerScript.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerInformationScript.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerMovement.cs" />
-    <Compile Include="Assets\Scripts\SoundEffects.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Resources\Day-Night Skyboxes\Textures\Readme for Assigning.txt" />

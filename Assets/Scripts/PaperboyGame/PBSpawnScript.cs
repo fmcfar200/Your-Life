@@ -141,6 +141,8 @@ public class PBSpawnScript : MonoBehaviour {
                     gameController.healthy += 2;
                     gameController.active += 2;
                 }
+                gameController.pulse = true;
+
                 spawning = false;
 
             }

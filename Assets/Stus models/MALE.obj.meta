@@ -1,0 +1,118 @@
+fileFormatVersion: 2
+guid: 7f30311ebaebe1140b04d6ba8e14e700
+timeCreated: 1491342081
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Body001
+    100002: EyeFBXASC032Left
+    100004: EyeFBXASC032Left001
+    100006: //RootNode
+    100008: Object001
+    100010: Plane001
+    100012: Shirt
+    100014: TeethFBXASC032Lower
+    100016: TeethFBXASC032Upper
+    100018: Trousers
+    400000: Body001
+    400002: EyeFBXASC032Left
+    400004: EyeFBXASC032Left001
+    400006: //RootNode
+    400008: Object001
+    400010: Plane001
+    400012: Shirt
+    400014: TeethFBXASC032Lower
+    400016: TeethFBXASC032Upper
+    400018: Trousers
+    2300000: Body001
+    2300002: EyeFBXASC032Left
+    2300004: EyeFBXASC032Left001
+    2300006: Object001
+    2300008: Plane001
+    2300010: Shirt
+    2300012: TeethFBXASC032Lower
+    2300014: TeethFBXASC032Upper
+    2300016: Trousers
+    3300000: Body001
+    3300002: EyeFBXASC032Left
+    3300004: EyeFBXASC032Left001
+    3300006: Object001
+    3300008: Plane001
+    3300010: Shirt
+    3300012: TeethFBXASC032Lower
+    3300014: TeethFBXASC032Upper
+    3300016: Trousers
+    4300000: Body001
+    4300002: EyeFBXASC032Left
+    4300004: EyeFBXASC032Left001
+    4300006: Object001
+    4300008: Plane001
+    4300010: Shirt
+    4300012: TeethFBXASC032Lower
+    4300014: TeethFBXASC032Upper
+    4300016: Trousers
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
