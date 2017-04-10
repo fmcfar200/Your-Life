@@ -15,9 +15,9 @@ public class FishPlayerScript : MonoBehaviour {
 
     public int score;
     int health;
-    public Text healthText;
     public Text scoreText;
-
+    public Image healthBar;
+    float percent;
     FishSpawnScript spawner;
     GameControllerScript gameController;
 
@@ -64,7 +64,6 @@ public class FishPlayerScript : MonoBehaviour {
     {
         Seek();
         scoreText.text = "Score: " + score.ToString();
-        healthText.text = health.ToString();
 
         if (health == 0)
         {
@@ -95,6 +94,10 @@ public class FishPlayerScript : MonoBehaviour {
             }
 
         }
+
+        percent = health / 3.0f;
+        Debug.Log(percent.ToString());
+        healthBar.fillAmount = percent;
     }
 
     void Seek()

@@ -20,6 +20,7 @@ public class FishSpawnScript : MonoBehaviour {
     public List<Transform> obstacleSpawns = new List<Transform>();
     public List<GameObject> powers = new List<GameObject>();
     public GameObject finishPanel;
+    public GameObject instructPanel;
     Text messageText;
     Text rewardText;
 
@@ -50,6 +51,8 @@ public class FishSpawnScript : MonoBehaviour {
             Debug.LogError("Game Controller not found !!!!");
         }
 
+        instructPanel.SetActive(true);
+        Time.timeScale = 0;
         StartCoroutine(Spawn());
     }
 
@@ -158,9 +161,15 @@ public class FishSpawnScript : MonoBehaviour {
         finishPanel.SetActive(true);
     }
 
+    public void Begin()
+    {
+        Time.timeScale = 1;
+        instructPanel.SetActive(false);
+    }
+
     public void Return()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(2);
     }
 
 }

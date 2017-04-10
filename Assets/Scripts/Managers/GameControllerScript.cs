@@ -12,6 +12,7 @@ public class GameControllerScript : MonoBehaviour {
 
     [Header("Player Data")]
     //playerdata
+    bool isGirl;
     public string playerName;
     public int playerScore;
     public float overallWellbeing;
@@ -69,6 +70,8 @@ public class GameControllerScript : MonoBehaviour {
         fishTier = 0;
 
         pulse = true;
+        GetPlayerData();
+        
 
     }
 
@@ -123,6 +126,14 @@ public class GameControllerScript : MonoBehaviour {
         }
 
       
+    }
+
+    void GetPlayerData()
+    {
+        CharacterSelectScript characterSelect = GameObject.Find("CharacterSelectManager").GetComponent<CharacterSelectScript>();
+        playerName = characterSelect.Name;
+        isGirl = characterSelect.isGirl;
+        Destroy(characterSelect.gameObject);
     }
 
    

@@ -10,7 +10,7 @@ public class LoadScene : MonoBehaviour {
     AsyncOperation async;
     void Start()
     {
-        async = SceneManager.LoadSceneAsync(1, LoadSceneMode.Single);
+        async = SceneManager.LoadSceneAsync(2, LoadSceneMode.Single);
         async.allowSceneActivation = true;
 
     }
@@ -19,7 +19,7 @@ public class LoadScene : MonoBehaviour {
     {
         
             progBar.GetComponent<Image>().fillAmount = async.progress;
-       
+            
     }
 
     

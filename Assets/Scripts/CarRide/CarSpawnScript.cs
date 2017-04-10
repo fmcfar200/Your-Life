@@ -25,6 +25,7 @@ public class CarSpawnScript : MonoBehaviour {
     public Text message_Text;
     public Text reward_Text;
     public GameObject finish_Panel;
+    public GameObject instructPanel;
 
     void Start()
     {
@@ -59,6 +60,8 @@ public class CarSpawnScript : MonoBehaviour {
             }
         }
 
+        instructPanel.SetActive(true);
+        Time.timeScale = 0;
         StartCoroutine(Spawn());
     }
 
@@ -155,10 +158,16 @@ public class CarSpawnScript : MonoBehaviour {
 
     }
 
+    public void Begin()
+    {
+        Time.timeScale = 1;
+        instructPanel.SetActive(false);
+    }
+
     public void ReturnHome()
     {
         gameController.playerScore += scoreReward;
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(2);
     }
  }
 

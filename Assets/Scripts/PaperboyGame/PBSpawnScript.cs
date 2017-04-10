@@ -30,6 +30,8 @@ public class PBSpawnScript : MonoBehaviour {
     Text messageText;
     Text rewardText;
 
+    public GameObject instructPanel;
+
     public int streak;
     int combo;
 
@@ -80,6 +82,8 @@ public class PBSpawnScript : MonoBehaviour {
            
         }
 
+        instructPanel.SetActive(true);
+        Time.timeScale = 0;
         StartCoroutine(Spawn());
 
     }
@@ -113,41 +117,43 @@ public class PBSpawnScript : MonoBehaviour {
 
     IEnumerator Spawn()
     {
-        yield return new WaitForSeconds(3.0f);
+        
+            yield return new WaitForSeconds(3.0f);
 
-        while (spawning)
-        {
-            if (wave != maxWave)
+            while (spawning)
             {
-                for (int i = 0; i < spawnAmount; i++)
+                if (wave != maxWave)
                 {
-                    Instantiate(arrows[Random.Range(0, arrows.Count)], spawns[Random.Range(0, spawns.Count)].transform.position, Quaternion.identity);
+                    for (int i = 0; i < spawnAmount; i++)
+                    {
+                        Instantiate(arrows[Random.Range(0, arrows.Count)], spawns[Random.Range(0, spawns.Count)].transform.position, Quaternion.identity);
 
-                    yield return new WaitForSeconds(spawnDelay);
-                }
-                wave++;
+                        yield return new WaitForSeconds(spawnDelay);
+                    }
+                    wave++;
 
-                yield return new WaitForSeconds(3.0f);
-            }
-            else
-            {
-                if (gameController.bikeTier > 0)
-                {
-                    gameController.healthy += 2 * gameController.bikeTier;
-                    gameController.active += 2 * gameController.bikeTier;
+                    yield return new WaitForSeconds(3.0f);
                 }
                 else
                 {
-                    gameController.healthy += 2;
-                    gameController.active += 2;
+                    if (gameController.bikeTier > 0)
+                    {
+                        gameController.healthy += 2 * gameController.bikeTier;
+                        gameController.active += 2 * gameController.bikeTier;
+                    }
+                    else
+                    {
+                        gameController.healthy += 2;
+                        gameController.active += 2;
+                    }
+                    gameController.pulse = true;
+
+                    spawning = false;
+
                 }
-                gameController.pulse = true;
-
-                spawning = false;
-
             }
         }
-    }
+    
 
     void OnTriggerEnter2D(Collider2D coll)
     {
@@ -252,7 +258,12 @@ public class PBSpawnScript : MonoBehaviour {
 
     public void Return()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(2);
+    }
+    public void Begin()
+    {
+        Time.timeScale = 1;
+        instructPanel.SetActive(false);
     }
 
     void Complete()
