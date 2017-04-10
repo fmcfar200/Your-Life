@@ -127,7 +127,7 @@ public class GameControllerScript : MonoBehaviour {
             loadButton = GameObject.Find("LoadButton").GetComponent<Button>();
 
             saveButton.onClick.AddListener(() => Save());
-            loadButton.onClick.AddListener(() => Load());
+            loadButton.onClick.AddListener(() => LoadInGame());
 
            
         }
@@ -153,7 +153,6 @@ public class GameControllerScript : MonoBehaviour {
         CharacterSelectScript characterSelect = GameObject.Find("CharacterSelectManager").GetComponent<CharacterSelectScript>();
         playerName = characterSelect.Name;
         isGirl = characterSelect.isGirl;
-        Destroy(characterSelect.gameObject);
     }
 
    
@@ -166,13 +165,24 @@ public class GameControllerScript : MonoBehaviour {
         PlayerData playerData = new PlayerData();
         playerData.name = playerName;
         playerData.score = playerScore;
-        playerData.overallWellbeing = overallWellbeing;
+        playerData.isGirl = isGirl;
+        playerData.safe = safe;
+        playerData.healthy = healthy;
+        playerData.active = active;
+        playerData.nurtured = nurtured;
+        playerData.accepted = accepted;
+        playerData.respected = respected;
+        playerData.responsible = responsible;
+        playerData.included = included;
+        playerData.bikeTeir = bikeTier;
+        playerData.carTier = carTier;
+        playerData.fishtier = fishTier;
 
         bf.Serialize(file, playerData);
         file.Close();
     }
 
-    public void Load()
+    public void LoadInGame()
     {
         if (File.Exists(Application.persistentDataPath + "/playerData.dat"))
         {
@@ -183,21 +193,66 @@ public class GameControllerScript : MonoBehaviour {
 
             playerName = playerData.name;
             playerScore = playerData.score;
-            overallWellbeing = playerData.overallWellbeing;
+            isGirl = playerData.isGirl;
+            safe = playerData.safe;
+            healthy = playerData.healthy;
+            active = playerData.active;
+            nurtured = playerData.nurtured;
+            accepted = playerData.accepted;
+            respected = playerData.respected;
+            responsible = playerData.responsible;
+            included = playerData.included;
+            bikeTier = playerData.bikeTeir;
+            carTier = playerData.carTier;
+            fishTier = playerData.fishtier;
 
+            SceneManager.LoadScene(1);
             Debug.Log(playerName+" " +playerScore.ToString() + " " + overallWellbeing.ToString("F1"));
 
         }
                 
     }
 
+    public void LoadFromStart()
+    {
+        if (File.Exists(Application.persistentDataPath + "/playerData.dat"))
+        {
+            BinaryFormatter bf = new BinaryFormatter();
+            FileStream file = File.Open(Application.persistentDataPath + "/playerdata.dat", FileMode.Open);
+            PlayerData playerData = (PlayerData)bf.Deserialize(file);
+            file.Close();
+
+            playerName = playerData.name;
+            playerScore = playerData.score;
+            isGirl = playerData.isGirl;
+            safe = playerData.safe;
+            healthy = playerData.healthy;
+            active = playerData.active;
+            nurtured = playerData.nurtured;
+            accepted = playerData.accepted;
+            respected = playerData.respected;
+            responsible = playerData.responsible;
+            included = playerData.included;
+            bikeTier = playerData.bikeTeir;
+            carTier = playerData.carTier;
+            fishTier = playerData.fishtier;
+
+            Debug.Log(playerName + " " + playerScore.ToString() + " " + overallWellbeing.ToString("F1"));
+
+        }
+
+    }
+
     //class for saving purposes
     [Serializable]
     class PlayerData
     {
+        public bool isGirl;
         public string name;
         public int score;
-        public float overallWellbeing;
+        public int safe, healthy, active, nurtured,
+            accepted, respected, responsible,
+            included, bikeTeir, carTier, fishtier;
     }
 
     

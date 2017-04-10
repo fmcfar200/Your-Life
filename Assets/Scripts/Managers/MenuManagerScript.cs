@@ -10,6 +10,9 @@ public class MenuManagerScript : MonoBehaviour {
     GameControllerScript gameController;
 
     public GameObject instructionScreen;
+    public Button saveButton;
+    public Button loadButton;
+
 
     void Start()
     {
@@ -24,6 +27,12 @@ public class MenuManagerScript : MonoBehaviour {
         if (gameController.instructionPanelRead == true)
         {
             instructionScreen.SetActive(false);
+        }
+
+        if (gameController!= null)
+        {
+            saveButton.onClick.AddListener(() => gameController.Save());
+            loadButton.onClick.AddListener(() => gameController.LoadInGame());
         }
 
     }

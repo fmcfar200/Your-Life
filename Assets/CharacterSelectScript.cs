@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 public class CharacterSelectScript : MonoBehaviour {
 
+    public bool newGame;
     public bool isGirl;
     public string Name;
 
@@ -13,6 +14,7 @@ public class CharacterSelectScript : MonoBehaviour {
 
     public InputField inputField;
 
+    public Button loadButton;
     void Start()
     {
         DontDestroyOnLoad(this);
@@ -21,7 +23,11 @@ public class CharacterSelectScript : MonoBehaviour {
     }
     void Update()
     {
-        Name = inputField.text;
+        if (Application.loadedLevelName == "CharacterEditScene")
+        {
+            Name = inputField.text;
+
+        }
     }
 
     public void BoySelect()
@@ -40,6 +46,14 @@ public class CharacterSelectScript : MonoBehaviour {
 
     public void Begin()
     {
+        newGame = true;
         SceneManager.LoadScene(1, LoadSceneMode.Single);
     }
+
+    public void LoadGame()
+    {
+        newGame = false;
+        SceneManager.LoadScene(1);
+    }
+
 }
