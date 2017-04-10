@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using System.IO;
 
 using UnityEngine.SceneManagement;
 public class CharacterSelectScript : MonoBehaviour {
@@ -52,8 +53,11 @@ public class CharacterSelectScript : MonoBehaviour {
 
     public void LoadGame()
     {
-        newGame = false;
-        SceneManager.LoadScene(1);
+        if (File.Exists(Application.persistentDataPath + "/playerData.dat"))
+        {
+            newGame = false;
+            SceneManager.LoadScene(1);
+        }
     }
 
 }

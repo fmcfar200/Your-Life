@@ -131,6 +131,7 @@ public class TimeCycleScript : MonoBehaviour {
         if (hour == 0 && rewardActive == true)
         {
            GiveDailyReward();
+            gameController.Save();
         }
         else if (hour == 1)
         {
