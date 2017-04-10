@@ -27,8 +27,18 @@ public class CharacterSelectScript : MonoBehaviour {
         if (Application.loadedLevelName == "CharacterEditScene")
         {
             Name = inputField.text;
+            if (!File.Exists(Application.persistentDataPath + "/playerData.dat"))
+            {
+                loadButton.interactable = false;
+            }
+            else
+            {
+                loadButton.interactable = true;
+            }
 
         }
+
+       
     }
 
     public void BoySelect()
