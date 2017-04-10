@@ -47,12 +47,15 @@ public class GameControllerScript : MonoBehaviour {
     Button saveButton;
     Button loadButton;
 
+    GameObject homeInstructPanel;
+    public bool instructionPanelRead;
     int totalWellbeing;
 
     public bool pulse;
 
     void Awake()
     {
+        instructionPanelRead = false;
         if (controller == null)
         {
             DontDestroyOnLoad(gameObject);
@@ -79,9 +82,25 @@ public class GameControllerScript : MonoBehaviour {
     {
         if (Application.loadedLevelName == "HomeScene")
         {
+            homeInstructPanel = GameObject.Find("Instruction_Panel");
             playerObj = GameObject.FindGameObjectWithTag("Player");
             timeManagerObj = GameObject.Find("TimeManager");
 
+            if (homeInstructPanel != null)
+            {
+                if (instructionPanelRead == false)
+                {
+                    homeInstructPanel.SetActive(true);
+                }
+                else
+                {
+                    homeInstructPanel.SetActive(false);
+                }
+            }
+            else
+            {
+                Debug.LogError("Instruct panel not found");
+            }
             if (playerObj != null)
             {
                 playerInfo = playerObj.GetComponent<PlayerInformationScript>();
@@ -127,6 +146,7 @@ public class GameControllerScript : MonoBehaviour {
 
       
     }
+
 
     void GetPlayerData()
     {

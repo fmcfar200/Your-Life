@@ -49,7 +49,7 @@ public class Health : MonoBehaviour {
 
     public void ReturnHome()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(2);
     }
 
     public void DeductHealth()
