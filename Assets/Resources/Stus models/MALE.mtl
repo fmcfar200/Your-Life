@@ -1,0 +1,59 @@
+newmtl Body001SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.59 0.59 0.59
+Tf 1.00 1.00 1.00
+map_Kd Male Body Diff-2.png
+Ni 1.00
+Ks 0.00 0.00 0.00
+Ns 0.00
+newmtl EyeFBXASC032LeftSG
+illum 4
+Kd 0.05 0.13 0.38
+Ka 0.05 0.13 0.38
+Tf 1.00 1.00 1.00
+Ni 1.00
+Ks 0.00 0.00 0.00
+Ns 0.00
+newmtl EyeFBXASC032LeftSG1
+illum 4
+Kd 0.87 0.87 0.87
+Ka 0.87 0.87 0.87
+Tf 1.00 1.00 1.00
+Ni 1.00
+Ks 0.00 0.00 0.00
+Ns 0.00
+newmtl Object001SG
+illum 4
+Kd 0.00 0.00 0.05
+Ka 0.00 0.00 0.05
+Tf 1.00 1.00 1.00
+Ni 1.00
+Ks 0.00 0.00 0.00
+Ns 0.00
+newmtl ShirtSG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.59 0.59 0.59
+Tf 1.00 1.00 1.00
+map_Kd Male Dress Diff.png
+Ni 1.00
+Ks 0.00 0.00 0.00
+Ns 0.00
+newmtl TeethFBXASC032LowerSG
+illum 4
+Kd 0.86 0.86 0.86
+Ka 0.86 0.86 0.86
+Tf 1.00 1.00 1.00
+Ni 1.00
+Ks 0.00 0.00 0.00
+Ns 0.00
+newmtl TrousersSG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.59 0.59 0.59
+Tf 1.00 1.00 1.00
+map_Kd pants diff.png
+Ni 1.00
+Ks 0.00 0.00 0.00
+Ns 0.00

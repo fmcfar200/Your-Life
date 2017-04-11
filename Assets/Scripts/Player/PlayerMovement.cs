@@ -2,6 +2,7 @@
 using UnityEngine.EventSystems;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Animations;
 
 public class PlayerMovement : MonoBehaviour {
 
@@ -15,8 +16,51 @@ public class PlayerMovement : MonoBehaviour {
     private Vector3 lastPos;
     private float dragDistance;
 
+    public AnimatorController girlController;
+    public AnimatorController boyController;
+    public Avatar girlIdleAvatar;
+    public Avatar boyIdleAvatar;
+
     Animator animator;
     Transform modelTrans;
+
+    GameControllerScript gameController;
+
+    void Awake()
+    {
+        animator = GetComponent<Animator>();
+        gameController = GameObject.Find("GameController").GetComponent<GameControllerScript>();
+        if (gameController != null)
+        {
+            if (gameController.isGirl)
+            {
+                animator.runtimeAnimatorController = girlController;
+                animator.avatar = girlIdleAvatar;
+
+                modelTrans = GameObject.Find("FemaleModel").transform;
+
+                GameObject maleModel = GameObject.Find("MaleModel");
+                if (maleModel != null)
+                {
+                    Destroy(maleModel);
+                }
+
+            }
+            else
+            {
+                animator.runtimeAnimatorController = boyController;
+                animator.avatar = boyIdleAvatar;
+
+                modelTrans = GameObject.Find("MaleModel").transform;
+
+                GameObject girlModel = GameObject.Find("FemaleModel");
+                if (girlModel != null)
+                {
+                    Destroy(girlModel);
+                }
+            }
+        }
+    }
 
     void Start()
     {
@@ -28,12 +72,12 @@ public class PlayerMovement : MonoBehaviour {
         dragDistance = Screen.height * 20 / 100;
 
         //ANIMATION TESTING
-        animator = GetComponent<Animator>();
-        modelTrans = player.transform.GetChild(1).transform;
         if (animator == null)
         {
             Debug.LogError("Animator not found!");
         }
+
+       
 
         
     }

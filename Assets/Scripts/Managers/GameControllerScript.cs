@@ -12,7 +12,7 @@ public class GameControllerScript : MonoBehaviour {
 
     [Header("Player Data")]
     //playerdata
-    bool isGirl;
+    public bool isGirl;
     public string playerName;
     public int playerScore;
     public float overallWellbeing;
