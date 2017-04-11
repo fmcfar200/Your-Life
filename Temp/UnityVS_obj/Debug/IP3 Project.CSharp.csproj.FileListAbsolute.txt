@@ -1,0 +1,15 @@
+C:\Users\Fraser\Documents\Uni\Year3\B\IP3\IP3 Project\Temp\UnityVS_bin\Debug\Assembly-CSharp.dll
+C:\Users\Fraser\Documents\Uni\Year3\B\IP3\IP3 Project\Temp\UnityVS_bin\Debug\Assembly-CSharp.pdb
+C:\Users\Fraser\Documents\Uni\Year3\B\IP3\IP3 Project\Temp\UnityVS_bin\Debug\Assembly-CSharp.dll.CodeAnalysisLog.xml
+C:\Users\Fraser\Documents\Uni\Year3\B\IP3\IP3 Project\Temp\UnityVS_bin\Debug\Assembly-CSharp.dll.lastcodeanalysissucceeded
+C:\Users\Fraser\Documents\Uni\Year3\B\IP3\IP3 Project\Temp\UnityVS_bin\Debug\UnityEditor.dll
+C:\Users\Fraser\Documents\Uni\Year3\B\IP3\IP3 Project\Temp\UnityVS_bin\Debug\UnityEngine.dll
+C:\Users\Fraser\Documents\Uni\Year3\B\IP3\IP3 Project\Temp\UnityVS_bin\Debug\UnityEngine.Networking.dll
+C:\Users\Fraser\Documents\Uni\Year3\B\IP3\IP3 Project\Temp\UnityVS_bin\Debug\UnityEngine.UI.dll
+C:\Users\Fraser\Documents\Uni\Year3\B\IP3\IP3 Project\Temp\UnityVS_bin\Debug\UnityEngine.xml
+C:\Users\Fraser\Documents\Uni\Year3\B\IP3\IP3 Project\Temp\UnityVS_bin\Debug\UnityEngine.UI.xml
+C:\Users\Fraser\Documents\Uni\Year3\B\IP3\IP3 Project\Temp\UnityVS_bin\Debug\UnityEngine.Networking.xml
+C:\Users\Fraser\Documents\Uni\Year3\B\IP3\IP3 Project\Temp\UnityVS_bin\Debug\UnityEditor.xml
+C:\Users\Fraser\Documents\Uni\Year3\B\IP3\IP3 Project\Temp\UnityVS_obj\Debug\IP3 Project.CSharp.csprojResolveAssemblyReference.cache
+C:\Users\Fraser\Documents\Uni\Year3\B\IP3\IP3 Project\Temp\UnityVS_obj\Debug\Assembly-CSharp.dll
+C:\Users\Fraser\Documents\Uni\Year3\B\IP3\IP3 Project\Temp\UnityVS_obj\Debug\Assembly-CSharp.pdb

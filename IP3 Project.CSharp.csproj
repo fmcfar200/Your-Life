@@ -63,13 +63,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\CharacterSelectScript.cs" />
     <Compile Include="Assets\Resources\GemExample\Scripts\Orbit.cs" />
     <Compile Include="Assets\Scripts\AnimationScript.cs" />
     <Compile Include="Assets\Scripts\Camera\CameraScript.cs" />
     <Compile Include="Assets\Scripts\CarRide\CarMovement.cs" />
     <Compile Include="Assets\Scripts\CarRide\CarSpawnScript.cs" />
     <Compile Include="Assets\Scripts\CarRide\PedCarScript.cs" />
+    <Compile Include="Assets\Scripts\CharacterSelectScript.cs" />
     <Compile Include="Assets\Scripts\ColourPulse.cs" />
     <Compile Include="Assets\Scripts\FishFeed\FishPlayerScript.cs" />
     <Compile Include="Assets\Scripts\FishFeed\FishSpawnScript.cs" />

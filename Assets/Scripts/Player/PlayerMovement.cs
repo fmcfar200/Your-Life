@@ -16,7 +16,8 @@ public class PlayerMovement : MonoBehaviour {
     private float dragDistance;
 
     Animator animator;
-    Transform playerModelP;
+    Transform modelTrans;
+
     void Start()
     {
         player = this.gameObject;
@@ -28,16 +29,13 @@ public class PlayerMovement : MonoBehaviour {
 
         //ANIMATION TESTING
         animator = GetComponent<Animator>();
-        playerModelP = transform.GetChild(1).GetComponent<Transform>();
+        modelTrans = player.transform.GetChild(1).transform;
         if (animator == null)
         {
             Debug.LogError("Animator not found!");
         }
 
-        if (playerModelP!=null)
-        {
-            Debug.Log(playerModelP.gameObject.name);
-        }
+        
     }
 
 	void Update()
@@ -130,14 +128,20 @@ public class PlayerMovement : MonoBehaviour {
         else
         {
             animator.SetBool("Moving", false);
+
         }
     }
 
     void MoveToPoint(Vector3 hitPoint)
     {
-        hitPoint.y = 0;
-        playerModelP.LookAt(hitPoint); //fix this
+        //hitPoint.y = 0;
+        modelTrans.transform.LookAt(hitPoint); //fix this
         player.transform.position = Vector3.MoveTowards(player.transform.position,hitPoint,speed*Time.deltaTime);
+
+        if (player.transform.position == hitPoint)
+        {
+            moving = false;
+        }
     }
 
 
