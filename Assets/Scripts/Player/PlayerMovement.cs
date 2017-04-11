@@ -2,7 +2,6 @@
 using UnityEngine.EventSystems;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Animations;
 
 public class PlayerMovement : MonoBehaviour {
 
@@ -16,8 +15,8 @@ public class PlayerMovement : MonoBehaviour {
     private Vector3 lastPos;
     private float dragDistance;
 
-    public AnimatorController girlController;
-    public AnimatorController boyController;
+    public AnimatorOverrideController girlController;
+    public AnimatorOverrideController boyController;
     public Avatar girlIdleAvatar;
     public Avatar boyIdleAvatar;
 
@@ -75,11 +74,7 @@ public class PlayerMovement : MonoBehaviour {
         if (animator == null)
         {
             Debug.LogError("Animator not found!");
-        }
-
-       
-
-        
+        } 
     }
 
 	void Update()
