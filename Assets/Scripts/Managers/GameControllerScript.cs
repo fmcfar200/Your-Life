@@ -187,7 +187,7 @@ public class GameControllerScript : MonoBehaviour {
         if (File.Exists(Application.persistentDataPath + "/playerData.dat"))
         {
             BinaryFormatter bf = new BinaryFormatter();
-            FileStream file = File.Open(Application.persistentDataPath + "/playerdata.dat",FileMode.Open);
+            FileStream file = File.Open(Application.persistentDataPath + "/playerData.dat",FileMode.Open);
             PlayerData playerData = (PlayerData)bf.Deserialize(file);
             file.Close();
 
@@ -218,7 +218,7 @@ public class GameControllerScript : MonoBehaviour {
         if (File.Exists(Application.persistentDataPath + "/playerData.dat"))
         {
             BinaryFormatter bf = new BinaryFormatter();
-            FileStream file = File.Open(Application.persistentDataPath + "/playerdata.dat", FileMode.Open);
+            FileStream file = File.Open(Application.persistentDataPath + "/playerData.dat", FileMode.Open);
             PlayerData playerData = (PlayerData)bf.Deserialize(file);
             file.Close();
 
