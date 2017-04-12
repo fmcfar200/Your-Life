@@ -11,6 +11,9 @@ public class CarMovement : MonoBehaviour
 
     public GameObject shield;
     bool shieldActive = false;
+
+    public SoundEffects SFX;
+
     void Start()
     {
         car = this.gameObject;
@@ -96,6 +99,7 @@ public class CarMovement : MonoBehaviour
             }
             else
             {
+                SFX.PlaySound("Fail");
                 spawnScript.GameOver();
             }
         }
@@ -105,11 +109,13 @@ public class CarMovement : MonoBehaviour
     {
         if (coll.gameObject.tag == "Shield")
         {
+            SFX.PlaySound("Upgrade");
             shieldActive = true;
             Destroy(coll.gameObject);
         }
         else if (coll.gameObject.tag == "Multiplier")
         {
+            SFX.PlaySound("Cash");
             spawnScript.scoreReward += 250;
             Destroy(coll.gameObject);
 
