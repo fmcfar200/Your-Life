@@ -128,9 +128,9 @@ public class CarSpawnScript : MonoBehaviour {
     IEnumerator SpawnRandomPower()
     {
         yield return new WaitForSeconds(spawnDelay / 2);
-        int chanceInt = Random.Range(-1, 1);
+        int chanceInt = Random.Range(0, 5);
         Debug.Log(chanceInt.ToString());
-        if (chanceInt >= 0)
+        if (chanceInt >= 3)
         {
             int indexP = Random.Range(0, powers.Count);
             int indexS = Random.Range(0, spawns.Count);

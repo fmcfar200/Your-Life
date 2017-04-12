@@ -35,6 +35,9 @@ public class PBSpawnScript : MonoBehaviour {
     public int streak;
     int combo;
 
+    SoundEffects SFX;
+    AudioSource aSource;
+
     void Start()
     {
         spawning = true;
@@ -43,7 +46,9 @@ public class PBSpawnScript : MonoBehaviour {
         combo = 1;
         streak = 0;
 
+        SFX = GameObject.Find("SFXManager").GetComponent<SoundEffects>();
         gameControllerObj = GameObject.Find("GameController");
+
         if(gameControllerObj!=null)
         {
             gameController = gameControllerObj.GetComponent<GameControllerScript>();
@@ -65,6 +70,11 @@ public class PBSpawnScript : MonoBehaviour {
                 spawnDelay = 1.25f;
                 spawnAmount = 10;
             }
+        }
+
+        if(SFX != null)
+        {
+            aSource = SFX.gameObject.GetComponent<AudioSource>();
         }
 
         foreach(Button button in buttons)
@@ -185,13 +195,14 @@ public class PBSpawnScript : MonoBehaviour {
             {
                 if (arrow.name == "ArrowUp(Clone)")
                 {
-                    Destroy(arrow);
-                    AddScore();
+                    StartCoroutine(WaitAndDestroy(arrow));
+
                     Debug.Log("Correct");
 
                 }
                 else
                 {
+                    SFX.PlaySound("Fail");
                     Debug.Log("Wrong");
                     streak = 0;
 
@@ -201,13 +212,14 @@ public class PBSpawnScript : MonoBehaviour {
             {
                 if (arrow.name == "ArrowDown(Clone)")
                 {
-                    Destroy(arrow);
-                    AddScore();
+                    StartCoroutine(WaitAndDestroy(arrow));
                     Debug.Log("Correct");
 
                 }
                 else
                 {
+                    SFX.PlaySound("Fail");
+
                     Debug.Log("Wrong");
                     streak = 0;
 
@@ -217,13 +229,15 @@ public class PBSpawnScript : MonoBehaviour {
             {
                 if (arrow.name == "ArrowLeft(Clone)")
                 {
-                    Destroy(arrow);
-                    AddScore();
+                    StartCoroutine(WaitAndDestroy(arrow));
+
                     Debug.Log("Correct");
 
                 }
                 else
                 {
+                    SFX.PlaySound("Fail");
+
                     Debug.Log("Wrong");
                     streak = 0;
 
@@ -233,13 +247,15 @@ public class PBSpawnScript : MonoBehaviour {
             {
                 if (arrow.name == "ArrowRight(Clone)")
                 {
-                    Destroy(arrow);
-                    AddScore();
+                    StartCoroutine(WaitAndDestroy(arrow));
+
                     Debug.Log("Correct");
 
                 }
                 else
                 {
+                    SFX.PlaySound("Fail");
+
                     Debug.Log("Wrong");
                     streak = 0;
                 }
@@ -280,5 +296,15 @@ public class PBSpawnScript : MonoBehaviour {
 
         Time.timeScale = 0;
         finishPanel.SetActive(true);
+    }
+
+    IEnumerator WaitAndDestroy(GameObject arrow)
+    {
+        SFX.PlaySound("Correct");
+        Destroy(arrow.GetComponent<Rigidbody2D>());
+        arrow.GetComponent<SpriteRenderer>().color = Color.green;
+        yield return new WaitForSeconds(0.5f);
+        Destroy(arrow);
+        AddScore();
     }
 }

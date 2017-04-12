@@ -17,6 +17,7 @@ public class LoadScene : MonoBehaviour {
         {
             if (characterSelectScript.newGame == true)
             {
+               
                 async = SceneManager.LoadSceneAsync(2, LoadSceneMode.Single);
                 async.allowSceneActivation = true;
             }

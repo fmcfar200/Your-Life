@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class SoundEffects : MonoBehaviour {
 
@@ -8,6 +9,9 @@ public class SoundEffects : MonoBehaviour {
     public AudioClip timeButton;
     public AudioClip UIClick;
     public AudioClip cash;
+    public AudioClip fail;
+
+    public List<AudioClip> bikeCorrectSFX = new List<AudioClip>();
     AudioSource source;
 
     void Start()
@@ -38,6 +42,17 @@ public class SoundEffects : MonoBehaviour {
             source.PlayOneShot(cash);
 
         }
-       
+
+        else if (type == "Fail")
+        {
+            source.PlayOneShot(fail);
+
+        }
+        else if (type == "Correct")
+        {
+            int random = Random.Range(0, bikeCorrectSFX.Count);
+            source.PlayOneShot(bikeCorrectSFX[random]);
+        }
+
     }
 }

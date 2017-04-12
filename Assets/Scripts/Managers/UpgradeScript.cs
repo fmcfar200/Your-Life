@@ -109,13 +109,20 @@ public class UpgradeScript : MonoBehaviour {
                 break;
             case 1:
                 bikes[bikeTier - 1].SetActive(false);
-                bikeUpgradeButtons[0].interactable = true;
+
+                bikeUpgradeButtons[0].interactable = false;
+                bikeUpgradeButtons[0].GetComponent<Image>().color = Color.green;
+
                 bikeUpgradeButtons[1].interactable = true;
                 bikeCost = 4000;
                 break;
             case 2:
-                bikeUpgradeButtons[0].interactable = true;
-                bikeUpgradeButtons[1].interactable = true;
+                bikeUpgradeButtons[0].interactable = false;
+                bikeUpgradeButtons[0].GetComponent<Image>().color = Color.green;
+
+                bikeUpgradeButtons[1].interactable = false;
+                bikeUpgradeButtons[1].GetComponent<Image>().color = Color.green;
+
                 bikeUpgradeButtons[2].interactable = true;
                 bikeCost = 8000;
                 break;
@@ -131,14 +138,20 @@ public class UpgradeScript : MonoBehaviour {
                 break;
             case 1:
                 carObj.GetComponent<Renderer>().material = carMaterial2;
-                carUpgradeButtons[0].interactable = true;
+                carUpgradeButtons[0].interactable = false;
+                carUpgradeButtons[0].GetComponent<Image>().color = Color.green;
+
                 carUpgradeButtons[1].interactable = true;
                 carCost = 4500;
                 break;
             case 2:
                 carObj.GetComponent<Renderer>().material = carMaterial2;
-                carUpgradeButtons[0].interactable = true;
-                carUpgradeButtons[1].interactable = true;
+                carUpgradeButtons[0].interactable = false;
+                carUpgradeButtons[0].GetComponent<Image>().color = Color.green;
+
+                carUpgradeButtons[1].interactable = false;
+                carUpgradeButtons[1].GetComponent<Image>().color = Color.green;
+
                 carUpgradeButtons[2].interactable = true;
                 carCost = 8500;
                 break;

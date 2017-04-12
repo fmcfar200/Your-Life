@@ -153,6 +153,17 @@ public class GameControllerScript : MonoBehaviour {
         CharacterSelectScript characterSelect = GameObject.Find("CharacterSelectManager").GetComponent<CharacterSelectScript>();
         playerName = characterSelect.Name;
         isGirl = characterSelect.isGirl;
+        if (playerName == "")
+        {
+            if (isGirl)
+            {
+                playerName = "Sarah";
+            }
+            else
+            {
+                playerName = "Scott";
+            }
+        }
     }
 
    

@@ -118,9 +118,9 @@ public class FishSpawnScript : MonoBehaviour {
 
     void SpawnRandomPower()
     {
-        int randomChanceInt = Random.Range(-1, 1);
+        int randomChanceInt = Random.Range(0, 5);
 
-        if (randomChanceInt >= 0)
+        if (randomChanceInt >= 4)
         {
             GameObject power = Instantiate(powers[Random.Range(0,powers.Count)], Random.insideUnitCircle * spawnRange, Quaternion.identity) as GameObject;
 
