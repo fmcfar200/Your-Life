@@ -14,6 +14,53 @@ public class PlayerMovement : MonoBehaviour {
     private Vector3 firstPos;
     private Vector3 lastPos;
     private float dragDistance;
+
+    public AnimatorOverrideController girlController;
+    public AnimatorOverrideController boyController;
+    public Avatar girlIdleAvatar;
+    public Avatar boyIdleAvatar;
+
+    Animator animator;
+    Transform modelTrans;
+
+    GameControllerScript gameController;
+
+    void Awake()
+    {
+        animator = GetComponent<Animator>();
+        gameController = GameObject.Find("GameController").GetComponent<GameControllerScript>();
+        if (gameController != null)
+        {
+            if (gameController.isGirl)
+            {
+                animator.runtimeAnimatorController = girlController;
+                animator.avatar = girlIdleAvatar;
+
+                modelTrans = GameObject.Find("FemaleModel").transform;
+
+                GameObject maleModel = GameObject.Find("MaleModel");
+                if (maleModel != null)
+                {
+                    Destroy(maleModel);
+                }
+
+            }
+            else
+            {
+                animator.runtimeAnimatorController = boyController;
+                animator.avatar = boyIdleAvatar;
+
+                modelTrans = GameObject.Find("MaleModel").transform;
+
+                GameObject girlModel = GameObject.Find("FemaleModel");
+                if (girlModel != null)
+                {
+                    Destroy(girlModel);
+                }
+            }
+        }
+    }
+
     void Start()
     {
         player = this.gameObject;
@@ -22,12 +69,18 @@ public class PlayerMovement : MonoBehaviour {
         canMove = true;
 
         dragDistance = Screen.height * 20 / 100;
+
+        //ANIMATION TESTING
+        if (animator == null)
+        {
+            Debug.LogError("Animator not found!");
+        } 
     }
 
 	void Update()
     {
-       
 
+        Mathf.Clamp(player.transform.position.y, 0, 0);
         if (Input.touchCount > 0)
         {
             Touch touch = Input.GetTouch(0);
@@ -109,13 +162,25 @@ public class PlayerMovement : MonoBehaviour {
         if (moving)
         {
             MoveToPoint(hitPoint);
+            animator.SetBool("Moving", true);
+        }
+        else
+        {
+            animator.SetBool("Moving", false);
+
         }
     }
 
     void MoveToPoint(Vector3 hitPoint)
     {
-        hitPoint.y = 0;
+        //hitPoint.y = 0;
+        modelTrans.transform.LookAt(hitPoint); //fix this
         player.transform.position = Vector3.MoveTowards(player.transform.position,hitPoint,speed*Time.deltaTime);
+
+        if (player.transform.position == hitPoint)
+        {
+            moving = false;
+        }
     }
 
 

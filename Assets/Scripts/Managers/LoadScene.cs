@@ -8,10 +8,28 @@ public class LoadScene : MonoBehaviour {
     public GameObject progBar;
     float fillAmount;
     AsyncOperation async;
+
+    CharacterSelectScript characterSelectScript;
     void Start()
     {
-        async = SceneManager.LoadSceneAsync(1, LoadSceneMode.Single);
-        async.allowSceneActivation = true;
+        characterSelectScript = GameObject.Find("CharacterSelectManager").GetComponent<CharacterSelectScript>();
+        if (characterSelectScript != null)
+        {
+            if (characterSelectScript.newGame == true)
+            {
+               
+                async = SceneManager.LoadSceneAsync(2, LoadSceneMode.Single);
+                async.allowSceneActivation = true;
+            }
+            else
+            {
+                GameObject.Find("GameController").GetComponent<GameControllerScript>().LoadFromStart();
+                async = SceneManager.LoadSceneAsync(2, LoadSceneMode.Single);
+                async.allowSceneActivation = true;
+            }
+        }
+      
+       
 
     }
 
@@ -19,7 +37,7 @@ public class LoadScene : MonoBehaviour {
     {
         
             progBar.GetComponent<Image>().fillAmount = async.progress;
-       
+            
     }
 
     

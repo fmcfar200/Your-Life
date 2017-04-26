@@ -15,9 +15,13 @@ public class ItemScript : MonoBehaviour {
     Button yesButton;
     Button noButton;
 
-
+    GameObject SFXManager;
+    SoundEffects soundEffects;
+    
+    
     void Awake()
     {
+       
         clicked = false;
         quickPrompt = GameObject.Find("Quick_Prompt");
         if (quickPrompt != null)
@@ -31,6 +35,16 @@ public class ItemScript : MonoBehaviour {
         {
             Debug.LogError("QP not found !!");
 
+        }
+
+        SFXManager = GameObject.Find("SFXManager");
+        if (SFXManager != null)
+        {
+            soundEffects = SFXManager.GetComponent<SoundEffects>();
+        }
+        else
+        {
+            Debug.Log("sfx manager not found");
         }
     }
 
@@ -47,7 +61,7 @@ public class ItemScript : MonoBehaviour {
 
             if (gameObject.tag == "Mission Item")
             {
-                
+                soundEffects.PlaySound("Select");
                 if (gameObject.name == "Bike")
                 {
                     quickPrompt.SetActive(true);
@@ -70,6 +84,15 @@ public class ItemScript : MonoBehaviour {
                 {
                     upgradeMenu.SetActive(true);
                 }
+
+                if (gameObject.name == "Fish Tank")
+                {
+                    quickPrompt.SetActive(true);
+                    promptTitle.text = "Fish Feed";
+                    promptDesc.text = "Playing this game will increase your Safe and Nurturing stats. Would you like to begin?";
+                    yesButton.onClick.AddListener(() => YesClick());
+                    noButton.onClick.AddListener(() => NoClick());
+                }
             }
             else
             {
@@ -90,6 +113,7 @@ public class ItemScript : MonoBehaviour {
 
     void YesClick()
     {
+        soundEffects.PlaySound("Activate");
         MissionManagerScript missionManager;
         GameObject manager = GameObject.Find("MenuManager");
         if (manager != null)
@@ -118,11 +142,23 @@ public class ItemScript : MonoBehaviour {
                 Application.LoadLevel("CarRide");
 
             }
+            if (gameObject.name == "Fish Tank")
+            {
+
+                promptOpen = false;
+                quickPrompt.SetActive(false);
+                promptDesc.text = null;
+                promptTitle.text = null;
+
+                Application.LoadLevel("FishFeeder");
+
+            }
         }
     }
 
     void NoClick()
     {
         quickPrompt.SetActive(false);
+        soundEffects.PlaySound("UI");
     }
 }

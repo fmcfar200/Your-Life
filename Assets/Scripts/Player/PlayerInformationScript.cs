@@ -87,6 +87,7 @@ public class PlayerInformationScript : MonoBehaviour {
         else
         {
             panelOpen = true;
+            gameController.pulse = false;  
         }
     }
 

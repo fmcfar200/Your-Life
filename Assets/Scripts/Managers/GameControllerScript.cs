@@ -12,6 +12,7 @@ public class GameControllerScript : MonoBehaviour {
 
     [Header("Player Data")]
     //playerdata
+    public bool isGirl;
     public string playerName;
     public int playerScore;
     public float overallWellbeing;
@@ -31,6 +32,7 @@ public class GameControllerScript : MonoBehaviour {
     [Header("Upgrade Data")]
     public int bikeTier;
     public int carTier;
+    public int fishTier;
 
     //scripts
     PlayerInformationScript playerInfo;
@@ -45,11 +47,15 @@ public class GameControllerScript : MonoBehaviour {
     Button saveButton;
     Button loadButton;
 
+    GameObject homeInstructPanel;
+    public bool instructionPanelRead;
     int totalWellbeing;
 
+    public bool pulse;
 
     void Awake()
     {
+        instructionPanelRead = false;
         if (controller == null)
         {
             DontDestroyOnLoad(gameObject);
@@ -64,15 +70,37 @@ public class GameControllerScript : MonoBehaviour {
 
         bikeTier = 0;
         carTier = 0;
+        fishTier = 0;
+
+        pulse = true;
+        GetPlayerData();
+        
+
     }
 
     void Start()
     {
         if (Application.loadedLevelName == "HomeScene")
         {
+            homeInstructPanel = GameObject.Find("Instruction_Panel");
             playerObj = GameObject.FindGameObjectWithTag("Player");
             timeManagerObj = GameObject.Find("TimeManager");
 
+            if (homeInstructPanel != null)
+            {
+                if (instructionPanelRead == false)
+                {
+                    homeInstructPanel.SetActive(true);
+                }
+                else
+                {
+                    homeInstructPanel.SetActive(false);
+                }
+            }
+            else
+            {
+                Debug.LogError("Instruct panel not found");
+            }
             if (playerObj != null)
             {
                 playerInfo = playerObj.GetComponent<PlayerInformationScript>();
@@ -99,7 +127,7 @@ public class GameControllerScript : MonoBehaviour {
             loadButton = GameObject.Find("LoadButton").GetComponent<Button>();
 
             saveButton.onClick.AddListener(() => Save());
-            loadButton.onClick.AddListener(() => Load());
+            loadButton.onClick.AddListener(() => LoadInGame());
 
            
         }
@@ -119,6 +147,25 @@ public class GameControllerScript : MonoBehaviour {
       
     }
 
+
+    void GetPlayerData()
+    {
+        CharacterSelectScript characterSelect = GameObject.Find("CharacterSelectManager").GetComponent<CharacterSelectScript>();
+        playerName = characterSelect.Name;
+        isGirl = characterSelect.isGirl;
+        if (playerName == "")
+        {
+            if (isGirl)
+            {
+                playerName = "Sarah";
+            }
+            else
+            {
+                playerName = "Scott";
+            }
+        }
+    }
+
    
 
     public void Save()
@@ -129,38 +176,94 @@ public class GameControllerScript : MonoBehaviour {
         PlayerData playerData = new PlayerData();
         playerData.name = playerName;
         playerData.score = playerScore;
-        playerData.overallWellbeing = overallWellbeing;
+        playerData.isGirl = isGirl;
+        playerData.safe = safe;
+        playerData.healthy = healthy;
+        playerData.active = active;
+        playerData.nurtured = nurtured;
+        playerData.accepted = accepted;
+        playerData.respected = respected;
+        playerData.responsible = responsible;
+        playerData.included = included;
+        playerData.bikeTeir = bikeTier;
+        playerData.carTier = carTier;
+        playerData.fishtier = fishTier;
 
         bf.Serialize(file, playerData);
         file.Close();
     }
 
-    public void Load()
+    public void LoadInGame()
     {
         if (File.Exists(Application.persistentDataPath + "/playerData.dat"))
         {
             BinaryFormatter bf = new BinaryFormatter();
-            FileStream file = File.Open(Application.persistentDataPath + "/playerdata.dat",FileMode.Open);
+            FileStream file = File.Open(Application.persistentDataPath + "/playerData.dat",FileMode.Open);
             PlayerData playerData = (PlayerData)bf.Deserialize(file);
             file.Close();
 
             playerName = playerData.name;
             playerScore = playerData.score;
-            overallWellbeing = playerData.overallWellbeing;
+            isGirl = playerData.isGirl;
+            safe = playerData.safe;
+            healthy = playerData.healthy;
+            active = playerData.active;
+            nurtured = playerData.nurtured;
+            accepted = playerData.accepted;
+            respected = playerData.respected;
+            responsible = playerData.responsible;
+            included = playerData.included;
+            bikeTier = playerData.bikeTeir;
+            carTier = playerData.carTier;
+            fishTier = playerData.fishtier;
 
+            SceneManager.LoadScene(1);
             Debug.Log(playerName+" " +playerScore.ToString() + " " + overallWellbeing.ToString("F1"));
 
         }
                 
     }
 
+    public void LoadFromStart()
+    {
+        if (File.Exists(Application.persistentDataPath + "/playerData.dat"))
+        {
+            BinaryFormatter bf = new BinaryFormatter();
+            FileStream file = File.Open(Application.persistentDataPath + "/playerData.dat", FileMode.Open);
+            PlayerData playerData = (PlayerData)bf.Deserialize(file);
+            file.Close();
+
+            playerName = playerData.name;
+            playerScore = playerData.score;
+            isGirl = playerData.isGirl;
+            safe = playerData.safe;
+            healthy = playerData.healthy;
+            active = playerData.active;
+            nurtured = playerData.nurtured;
+            accepted = playerData.accepted;
+            respected = playerData.respected;
+            responsible = playerData.responsible;
+            included = playerData.included;
+            bikeTier = playerData.bikeTeir;
+            carTier = playerData.carTier;
+            fishTier = playerData.fishtier;
+
+            Debug.Log(playerName + " " + playerScore.ToString() + " " + overallWellbeing.ToString("F1"));
+
+        }
+
+    }
+
     //class for saving purposes
     [Serializable]
     class PlayerData
     {
+        public bool isGirl;
         public string name;
         public int score;
-        public float overallWellbeing;
+        public int safe, healthy, active, nurtured,
+            accepted, respected, responsible,
+            included, bikeTeir, carTier, fishtier;
     }
 
     

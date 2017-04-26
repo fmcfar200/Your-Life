@@ -7,6 +7,12 @@ public class MenuManagerScript : MonoBehaviour {
 
     public List<GameObject> menus = new List<GameObject>();
     bool menuOpen;
+    GameControllerScript gameController;
+
+    public GameObject instructionScreen;
+    public Button saveButton;
+    public Button loadButton;
+
 
     void Start()
     {
@@ -15,6 +21,20 @@ public class MenuManagerScript : MonoBehaviour {
         {
             menu.SetActive(false);
         }
+
+        gameController = GameObject.Find("GameController").GetComponent<GameControllerScript>();
+
+        if (gameController.instructionPanelRead == true)
+        {
+            instructionScreen.SetActive(false);
+        }
+
+        if (gameController!= null)
+        {
+            saveButton.onClick.AddListener(() => gameController.Save());
+            loadButton.onClick.AddListener(() => gameController.LoadInGame());
+        }
+
     }
 
     void Update()
@@ -54,5 +74,11 @@ public class MenuManagerScript : MonoBehaviour {
             menu.SetActive(false);
         }
         menuOpen = false;
+    }
+
+    public void CloseInstruction()
+    {
+        gameController.instructionPanelRead = true;
+        instructionScreen.SetActive(false);
     }
 }

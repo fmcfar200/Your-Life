@@ -17,7 +17,7 @@ public class PBSpawnScript : MonoBehaviour {
     int wave;
     int maxWave;
     int spawnAmount;
-    int score;
+    public int score;
 
     GameControllerScript gameController;
     GameObject gameControllerObj;
@@ -26,13 +26,29 @@ public class PBSpawnScript : MonoBehaviour {
 
     int bikeTier;
 
+    public GameObject finishPanel;
+    Text messageText;
+    Text rewardText;
+
+    public GameObject instructPanel;
+
+    public int streak;
+    int combo;
+
+    SoundEffects SFX;
+    AudioSource aSource;
+
     void Start()
     {
         spawning = true;
         wave = 0;
         maxWave = 3;
+        combo = 1;
+        streak = 0;
 
+        SFX = GameObject.Find("SFXManager").GetComponent<SoundEffects>();
         gameControllerObj = GameObject.Find("GameController");
+
         if(gameControllerObj!=null)
         {
             gameController = gameControllerObj.GetComponent<GameControllerScript>();
@@ -56,11 +72,28 @@ public class PBSpawnScript : MonoBehaviour {
             }
         }
 
+        if(SFX != null)
+        {
+            aSource = SFX.gameObject.GetComponent<AudioSource>();
+        }
+
         foreach(Button button in buttons)
         {
             button.onClick.AddListener(() => ButtonClick());
         }
 
+        if (finishPanel != null)
+        {
+            finishPanel.SetActive(false);
+
+            messageText = finishPanel.transform.GetChild(0).GetComponent<Text>();
+            rewardText = finishPanel.transform.GetChild(1).GetComponent<Text>();
+
+           
+        }
+
+        instructPanel.SetActive(true);
+        Time.timeScale = 0;
         StartCoroutine(Spawn());
 
     }
@@ -69,53 +102,84 @@ public class PBSpawnScript : MonoBehaviour {
     {
         if (spawning == false)
         {
-            SceneManager.LoadScene(1);
+            Complete();
         }
 
         scoreText.text = "Score: " + score.ToString();
+
+        if (streak >= 10 && streak <= 19)
+        {
+            combo = 2;
+        }
+        else if (streak >= 20 && streak <= 29)
+        {
+            combo = 3;
+        }
+        else if (streak >= 30)
+        {
+            combo = 4;
+        }
+        else
+        {
+            combo = 1;
+        }
     }
 
     IEnumerator Spawn()
     {
-        yield return new WaitForSeconds(3.0f);
+        
+            yield return new WaitForSeconds(3.0f);
 
-        while (spawning)
-        {
-            if (wave != maxWave)
+            while (spawning)
             {
-                for (int i = 0; i < spawnAmount; i++)
+                if (wave != maxWave)
                 {
-                    Instantiate(arrows[Random.Range(0, arrows.Count)], spawns[Random.Range(0, spawns.Count)].transform.position, Quaternion.identity);
+                    for (int i = 0; i < spawnAmount; i++)
+                    {
+                        Instantiate(arrows[Random.Range(0, arrows.Count)], spawns[Random.Range(0, spawns.Count)].transform.position, Quaternion.identity);
 
-                    yield return new WaitForSeconds(spawnDelay);
-                }
-                wave++;
+                        yield return new WaitForSeconds(spawnDelay);
+                    }
+                    wave++;
 
-                yield return new WaitForSeconds(3.0f);
-            }
-            else
-            {
-                if (gameController.bikeTier > 0)
-                {
-                    gameController.healthy += 2 * gameController.bikeTier;
-                    gameController.active += 2 * gameController.bikeTier;
+                    yield return new WaitForSeconds(3.0f);
                 }
                 else
                 {
-                    gameController.healthy += 2;
-                    gameController.active += 2;
-                }
-                spawning = false;
+                    if (gameController.bikeTier > 0)
+                    {
+                        gameController.healthy += 2 * gameController.bikeTier;
+                        gameController.active += 2 * gameController.bikeTier;
+                    }
+                    else
+                    {
+                        gameController.healthy += 2;
+                        gameController.active += 2;
+                    }
+                    gameController.pulse = true;
 
+                    spawning = false;
+
+                }
             }
         }
-    }
+    
 
     void OnTriggerEnter2D(Collider2D coll)
     {
         if (coll.tag == "Arrow")
         {
             arrow = coll.gameObject;
+
+
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D coll)
+    {
+        if (coll.tag == "Arrow")
+        {
+            arrow = null;
 
 
         }
@@ -131,56 +195,69 @@ public class PBSpawnScript : MonoBehaviour {
             {
                 if (arrow.name == "ArrowUp(Clone)")
                 {
-                    Destroy(arrow);
-                    AddScore();
+                    StartCoroutine(WaitAndDestroy(arrow));
+
                     Debug.Log("Correct");
 
                 }
                 else
                 {
+                    SFX.PlaySound("Fail");
                     Debug.Log("Wrong");
+                    streak = 0;
+
                 }
             }
             else if (button.name == "DownButton")
             {
                 if (arrow.name == "ArrowDown(Clone)")
                 {
-                    Destroy(arrow);
-                    AddScore();
+                    StartCoroutine(WaitAndDestroy(arrow));
                     Debug.Log("Correct");
 
                 }
                 else
                 {
+                    SFX.PlaySound("Fail");
+
                     Debug.Log("Wrong");
+                    streak = 0;
+
                 }
             }
             else if (button.name == "LeftButton")
             {
                 if (arrow.name == "ArrowLeft(Clone)")
                 {
-                    Destroy(arrow);
-                    AddScore();
+                    StartCoroutine(WaitAndDestroy(arrow));
+
                     Debug.Log("Correct");
 
                 }
                 else
                 {
+                    SFX.PlaySound("Fail");
+
                     Debug.Log("Wrong");
+                    streak = 0;
+
                 }
             }
             else if (button.name == "RightButton")
             {
                 if (arrow.name == "ArrowRight(Clone)")
                 {
-                    Destroy(arrow);
-                    AddScore();
+                    StartCoroutine(WaitAndDestroy(arrow));
+
                     Debug.Log("Correct");
 
                 }
                 else
                 {
+                    SFX.PlaySound("Fail");
+
                     Debug.Log("Wrong");
+                    streak = 0;
                 }
             }
 
@@ -190,13 +267,44 @@ public class PBSpawnScript : MonoBehaviour {
 
     void AddScore()
     {
-        score += 10;
+        streak++;
+        score += (10 * (bikeTier + 1)) * combo;
         gameController.playerScore += score;
     }
 
     public void Return()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(2);
+    }
+    public void Begin()
+    {
+        Time.timeScale = 1;
+        instructPanel.SetActive(false);
     }
 
+    void Complete()
+    {
+        if (rewardText != null && messageText != null)
+        {
+            messageText.text = "Complete!";
+            rewardText.text = "Score: + " + score;
+        }
+        else
+        {
+            Debug.LogError("text not found");
+        }
+
+        Time.timeScale = 0;
+        finishPanel.SetActive(true);
+    }
+
+    IEnumerator WaitAndDestroy(GameObject arrow)
+    {
+        SFX.PlaySound("Correct");
+        Destroy(arrow.GetComponent<Rigidbody2D>());
+        arrow.GetComponent<SpriteRenderer>().color = Color.green;
+        yield return new WaitForSeconds(0.5f);
+        Destroy(arrow);
+        AddScore();
+    }
 }
